@@ -1,6 +1,6 @@
-import { Application } from "express"
+import { Router } from "express"
 
 export interface IRoute {
     path: string
-    handler: Application
+    handler: Router
 }
