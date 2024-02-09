@@ -1,5 +1,7 @@
 import CallToAction from "../../components/sections/CallToAction";
+import FAQ from "../../components/sections/FAQ";
 import MeetOurInvestors from "../../components/sections/MeetOurInvestors";
+import OurTrackRecord from "../../components/sections/OurTrackRecord";
 import PerksAndPartners from "../../components/sections/PerksAndPartners";
 import QuoteSection from "../../components/sections/QuoteSection";
 import Strap from "../../components/sections/Strap";
@@ -15,6 +17,8 @@ function Home() {
       <CallToAction />
       <PerksAndPartners />
       <MeetOurInvestors />
+      <OurTrackRecord />
+      <FAQ />
     </DefaultLayout>
   );
 }
