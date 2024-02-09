@@ -6,6 +6,7 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 import { MinusIcon, AddIcon } from "@chakra-ui/icons";
+import StillHavQuestions from "./StillHavQuestions";
 
 function FAQ() {
   const questions = [
@@ -77,6 +78,7 @@ function FAQ() {
             ))}
           </Accordion>
         </Stack>
+        <StillHavQuestions />
       </Container>
     </Flex>
   );
