@@ -1,5 +1,12 @@
+import FAQ from "../../components/sections/FAQ";
+import DefaultLayout from "../../layouts/DefaultLayout";
+
 function SupportPage() {
-  return <div>SupportPage</div>;
+  return (
+    <DefaultLayout>
+      <FAQ />
+    </DefaultLayout>
+  );
 }
 
 export default SupportPage;
