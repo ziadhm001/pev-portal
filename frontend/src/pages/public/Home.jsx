@@ -4,7 +4,6 @@ import MeetOurInvestors from "../../components/sections/MeetOurInvestors";
 import OurTrackRecord from "../../components/sections/OurTrackRecord";
 import PerksAndPartners from "../../components/sections/PerksAndPartners";
 import QuoteSection from "../../components/sections/QuoteSection";
-import StillHavQuestions from "../../components/sections/StillHavQuestions";
 import Strap from "../../components/sections/Strap";
 import VideoSection from "../../components/sections/VideoSection";
 import DefaultLayout from "../../layouts/DefaultLayout";
