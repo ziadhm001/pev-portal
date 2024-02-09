@@ -1,0 +1,127 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "UserAuth",
+    "dateExported": "2024-02-09T01:06:30.093Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fbcae120-c453-4c77-99b3-82f5155652f4",
+            "colId": "fc0b0bdf-0c70-4441-9a07-b81d40498839",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:5001/api/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-09T00:54:34.781Z",
+            "modified": "2024-02-09T00:56:45.799Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\": \"Mina\",\n  \"lastName\": \"Raafat\",\n  \"email\": \"mina.raafat@gmail.com\",\n  \"password\": \"6charslong\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c543dc68-ee5b-4e39-b40d-a6c037041be8",
+            "colId": "fc0b0bdf-0c70-4441-9a07-b81d40498839",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:5001/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-09T00:57:07.352Z",
+            "modified": "2024-02-09T00:57:31.620Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"mina.raafat@gmail.com\",\n  \"password\": \"6charslong\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b0ce1a89-f586-4101-a3bb-34b2051f4fd2",
+            "colId": "fc0b0bdf-0c70-4441-9a07-b81d40498839",
+            "containerId": "",
+            "name": "Change Password",
+            "url": "http://localhost:5001/api/auth/change-password",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-09T00:57:55.809Z",
+            "modified": "2024-02-09T00:59:04.785Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"oldPassword\": \"6charslong\",\n  \"newPassword\": \"123456\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzU3ODRkN2IxYTBhYTVjZGUwMmUzNiIsImVtYWlsIjoibWluYS5yYWFmYXRAZ21haWwuY29tIiwiaWF0IjoxNzA3NDQwMjUxLCJleHAiOjE3MDc4NzIyNTF9.KcseSipSnuCrHd4JVcH57aHP_FFVRZLyhDjWNw1xDrU"
+            },
+            "tests": []
+        },
+        {
+            "_id": "12d3914c-83ac-4967-911a-ef5fe7351ae1",
+            "colId": "fc0b0bdf-0c70-4441-9a07-b81d40498839",
+            "containerId": "",
+            "name": "Refresh Token",
+            "url": "http://localhost:5001/api/auth/refresh-token",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-02-09T00:59:30.396Z",
+            "modified": "2024-02-09T01:00:31.814Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzU1ZDkzM2FkNjVhYTZkOTllYWU3YSIsImVtYWlsIjoiemlhZGgubTAwMUBnbWFpbC5jb20iLCJpYXQiOjE3MDc0MzM4NjEsImV4cCI6MTcwNzg2NTg2MX0.y6amz-VADHCc2VySdViv59zZwX3rJsgOJNFon1k2tlE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b4716fb4-9915-4abc-a10f-4744323dc8b2",
+            "colId": "fc0b0bdf-0c70-4441-9a07-b81d40498839",
+            "containerId": "",
+            "name": "Request Forget Reset",
+            "url": "http://localhost:5001/api/auth/request-password-reset",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-02-09T01:01:04.708Z",
+            "modified": "2024-02-09T01:01:44.872Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"mina.raafat@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e4d999a3-c788-479a-b5ce-6ff00ad753c4",
+            "colId": "fc0b0bdf-0c70-4441-9a07-b81d40498839",
+            "containerId": "",
+            "name": "Reset Password (from link via mail: https://localhost:3000/auth/reset-password/e3e2c36f729ca14a2fcbafe02472770192a87103f3adb13a36618b540072cd1c)",
+            "url": "http://localhost:5001/api/auth/reset-password",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-02-09T01:03:16.286Z",
+            "modified": "2024-02-09T01:06:09.227Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"_LinkSentViaMail\": \"DONT ADD THIS PROPERTY, THIS LINK WOULD BE SENT BY MAIL INCLUDING THE RESET TOKEN AS URL PARAM.                       https://localhost:3000/auth/reset-password/e3e2c36f729ca14a2fcbafe02472770192a87103f3adb13a36618b540072cd1c\",\n  \n  \"resetToken\": \"e3e2c36f729ca14a2fcbafe02472770192a87103f3adb13a36618b540072cd1c\",\n  \"newPassword\": \"minaNewPassword\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
