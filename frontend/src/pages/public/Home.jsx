@@ -19,9 +19,7 @@ function Home() {
   return (
     <DefaultLayout>
       <LandingComponent onClick={scrollToRef} />
-
       <VideoSection myRef={ref} />
-
       <QuoteSection />
       <Strap />
       <CallToAction />

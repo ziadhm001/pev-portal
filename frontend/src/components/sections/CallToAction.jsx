@@ -1,7 +1,9 @@
 import { Flex, Stack, Button, Text, Container } from "@chakra-ui/react";
 import "@fontsource/open-sans/700.css";
 import GradientLine from "../gradient/GradientLine";
+import { useNavigate } from "react-router-dom";
 function CallToAction() {
+  const navigate = useNavigate();
   return (
     <>
       <GradientLine />
@@ -81,8 +83,11 @@ function CallToAction() {
                 size={"lg"}
                 height={"56px"}
                 w={"200px"}
+                onClick={() => {
+                  navigate("/register");
+                }}
               >
-                Get Started
+                Sign Up
               </Button>
               <Button
                 variant={"outline"}
@@ -91,8 +96,11 @@ function CallToAction() {
                 size={"lg"}
                 height={"56px"}
                 w={"200px"}
+                onClick={() => {
+                  navigate("/user/profile");
+                }}
               >
-                Learn More
+                Apply Now
               </Button>
             </Stack>
           </Stack>

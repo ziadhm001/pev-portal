@@ -1,7 +1,9 @@
 import { Flex, Text, Stack, Button, IconButton } from "@chakra-ui/react";
 import backgroundImage from "../../assets/images/background.jpg";
 import { FiArrowDown, FiInfo, FiUser } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 function LandingComponent({ onClick }) {
+  const navigate = useNavigate();
   return (
     <Flex
       h={"103vh"}
@@ -36,7 +38,14 @@ function LandingComponent({ onClick }) {
               ACHIEVE TOGETHER
             </Text>
             <Stack direction={"row"} spacing={4}>
-              <Button leftIcon={<FiUser />} bg={"brand.300"} size="lg">
+              <Button
+                leftIcon={<FiUser />}
+                bg={"brand.300"}
+                size="lg"
+                onClick={() => {
+                  navigate("/user/profile");
+                }}
+              >
                 Apply
               </Button>
               <Button
@@ -46,7 +55,7 @@ function LandingComponent({ onClick }) {
                 color={"white"}
                 size="lg"
               >
-                Apply
+                Learn More
               </Button>
             </Stack>
             <IconButton
