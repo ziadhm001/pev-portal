@@ -47,6 +47,8 @@ function Footer() {
       height={{
         base: "auto",
       }}
+      zIndex={4}
+      pos={"relative"}
     >
       <Stack spacing={6} p={8}>
         <Grid

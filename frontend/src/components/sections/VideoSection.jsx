@@ -3,9 +3,16 @@ import ReactPlayer from "react-player";
 import "@fontsource/open-sans/700.css";
 import "@fontsource/open-sans/400.css";
 
-function VideoSection() {
+function VideoSection({ myRef }) {
   return (
-    <Flex justify={"center"} align={"center"} height={"100%"} bg={"#FAF0E7"}>
+    <Flex
+      justify={"center"}
+      align={"center"}
+      height={"100%"}
+      bg={"#FAF0E7"}
+      ref={myRef}
+      p={20}
+    >
       <Container maxW={"container.lg"}>
         <Stack
           spacing={4}

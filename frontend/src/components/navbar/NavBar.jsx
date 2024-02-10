@@ -20,7 +20,12 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   return (
-    <Box>
+    <Box
+      position={"fixed"}
+      w={"100%"}
+      zIndex={4}
+      boxShadow={"1px 1px 10px 1px"}
+    >
       <Flex
         bg={"brand.400"}
         color={"white"}

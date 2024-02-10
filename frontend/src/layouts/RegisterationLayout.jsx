@@ -46,7 +46,7 @@ function RegisterationLayout({ children }) {
             h={"280px"}
             w={"400px"}
             position={"relative"}
-            top={"-20px"}
+            top={"50px"}
             left={"-80px"}
           />
           <Stack spacing={4} zIndex={1} position={"relative"} top={"-80px"}>
@@ -89,6 +89,9 @@ function RegisterationLayout({ children }) {
         bg={"rgba(255,255,255,1)"}
         justifyContent={"space-between"}
         m={0}
+        h={"100vh"}
+        position={"relative"}
+        top={"80px"}
       >
         {children}
       </Flex>
