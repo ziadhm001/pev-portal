@@ -11,7 +11,7 @@ function CallToAction() {
         }
         position={"relative"}
         filter={"blur(10px)"}
-        transform={"scale(1.1) translateY(-3px)"}
+        transform={"translateY(-3px)"}
         zIndex={-1}
       />
       <Flex justify={"center"} transform={"translateY(-20px)"} align={"center"}>
@@ -282,7 +282,7 @@ function CallToAction() {
         }
         position={"relative"}
         filter={"blur(10px)"}
-        transform={"scale(1.1) translateY(3px)"}
+        transform={"translateY(3px)"}
         zIndex={-1}
       />
     </>

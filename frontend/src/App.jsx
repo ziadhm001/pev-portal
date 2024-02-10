@@ -4,6 +4,7 @@ import SignUp from "./pages/public/SignUp";
 import Login from "./pages/public/Login";
 import Home from "./pages/public/Home";
 import SupportPage from "./pages/public/SupportPage";
+import AddEditProfile from "./pages/private/AddEditProfile";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/support" element={<SupportPage />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/user/Profile" element={<AddEditProfile />} />
         </Routes>
       </Router>
     </React.Fragment>

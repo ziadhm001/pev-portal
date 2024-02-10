@@ -21,6 +21,7 @@ function FormPasswordField({
   error,
   touched,
   helperText,
+  ...rest
 }) {
   const isError = error !== undefined;
   const isTouched = touched !== undefined;
@@ -35,6 +36,7 @@ function FormPasswordField({
           onChange={onChange}
           placeholder={placeholder}
           isInvalid={isInvalid}
+          {...rest}
         />
         <InputRightElement h={"full"}>
           <Button

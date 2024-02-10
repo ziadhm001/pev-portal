@@ -19,7 +19,7 @@ function MeetOurInvestors() {
         }
         position={"relative"}
         filter={"blur(10px)"}
-        transform={"scale(1.1) translateY(3px)"}
+        transform={"translateY(3px)"}
         zIndex={-1}
       />
       <Flex justifyContent="center" alignItems="center" pt={8} pb={8}>
@@ -86,7 +86,7 @@ function MeetOurInvestors() {
         }
         position={"relative"}
         filter={"blur(10px)"}
-        transform={"scale(1.1) translateY(3px)"}
+        transform={"translateY(3px)"}
         zIndex={-1}
       />
     </>
