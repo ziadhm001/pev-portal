@@ -1,19 +1,10 @@
-import { Flex, Stack, Button, Text, Container, Box } from "@chakra-ui/react";
+import { Flex, Stack, Button, Text, Container } from "@chakra-ui/react";
 import "@fontsource/open-sans/700.css";
+import GradientLine from "../gradient/GradientLine";
 function CallToAction() {
   return (
     <>
-      <Box
-        w={"100%"}
-        height={"20px"}
-        bg={
-          "linear-gradient(90deg, #FAF0E7 -0.55%, #5A7729 14.44%, #39807F 31.42%, #5A7729 48.4%, #4BB543 64.38%, #A8BE38 81.86%, #4BB543 99.34%)"
-        }
-        position={"relative"}
-        filter={"blur(10px)"}
-        transform={"translateY(-3px)"}
-        zIndex={-1}
-      />
+      <GradientLine />
       <Flex justify={"center"} transform={"translateY(-20px)"} align={"center"}>
         <svg
           width="104"
@@ -274,17 +265,7 @@ function CallToAction() {
           </defs>
         </svg>
       </Flex>
-      <Box
-        w={"100%"}
-        height={"20px"}
-        bg={
-          " linear-gradient(90deg, #FAF0E7 -0.55%, #5A7729 14.44%, #39807F 31.42%, #5A7729 48.4%, #4BB543 64.38%, #A8BE38 81.86%, #4BB543 99.34%)"
-        }
-        position={"relative"}
-        filter={"blur(10px)"}
-        transform={"translateY(3px)"}
-        zIndex={-1}
-      />
+      <GradientLine />
     </>
   );
 }

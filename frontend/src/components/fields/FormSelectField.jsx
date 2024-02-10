@@ -1,22 +1,22 @@
 import {
   FormControl,
+  FormLabel,
   FormErrorMessage,
   FormHelperText,
-  FormLabel,
-  Input,
+  Select,
 } from "@chakra-ui/react";
 
-function FormTextField({
+function FormSelectField({
+  setValue,
   label,
   name,
-  type,
+  allOptions,
   placeholder,
   value,
   onChange,
   error,
   touched,
   helperText,
-  setValue,
   ...rest
 }) {
   const isError = error !== undefined;
@@ -25,25 +25,22 @@ function FormTextField({
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
       <FormLabel>{label}</FormLabel>
-      <Input
-        type={type}
+      <Select
         value={value}
-        onChange={(e) => {
-          if (onChange) {
-            onChange(e);
-          }
-          if (setValue) {
-            setValue(e.target.value);
-          }
-        }}
         placeholder={placeholder}
-        isInvalid={isInvalid}
+        onChange={onChange}
         {...rest}
-      />
+      >
+        {allOptions.map((xOption) => (
+          <option key={xOption.code} value={xOption.name}>
+            {xOption.name}
+          </option>
+        ))}
+      </Select>
       <FormHelperText>{!error && helperText}</FormHelperText>
       <FormErrorMessage>{isInvalid && error}</FormErrorMessage>
     </FormControl>
   );
 }
 
-export default FormTextField;
+export default FormSelectField;

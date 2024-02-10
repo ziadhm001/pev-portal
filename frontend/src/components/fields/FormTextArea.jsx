@@ -3,10 +3,10 @@ import {
   FormErrorMessage,
   FormHelperText,
   FormLabel,
-  Input,
+  Textarea,
 } from "@chakra-ui/react";
 
-function FormTextField({
+function FormTextArea({
   label,
   name,
   type,
@@ -25,7 +25,7 @@ function FormTextField({
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
       <FormLabel>{label}</FormLabel>
-      <Input
+      <Textarea
         type={type}
         value={value}
         onChange={(e) => {
@@ -46,4 +46,4 @@ function FormTextField({
   );
 }
 
-export default FormTextField;
+export default FormTextArea;

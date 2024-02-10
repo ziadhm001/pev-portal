@@ -28,15 +28,15 @@ import {
   FiMenu,
   FiBell,
   FiChevronDown,
+  FiUser,
 } from "react-icons/fi";
 import logo1 from "../../assets/images/logo1.png";
+import { Link } from "react-router-dom";
 
 const LinkItems = [
-  { name: "Home", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
-  { name: "Explore", icon: FiCompass },
-  { name: "Favourites", icon: FiStar },
-  { name: "Settings", icon: FiSettings },
+  { name: "Home", icon: FiHome, link: "/" },
+  { name: "User Profile", icon: FiUser, link: "/user/profile" },
+  { name: "Application", icon: FiTrendingUp, link: "/user/application-form" },
 ];
 
 const SidebarContent = ({ onClose, ...rest }) => {
@@ -61,7 +61,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} icon={link.icon} link={link.link}>
           {link.name}
         </NavItem>
       ))}
@@ -69,7 +69,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
   );
 };
 
-const NavItem = ({ icon, children, ...rest }) => {
+const NavItem = ({ icon, link, children, ...rest }) => {
   return (
     <Box
       as="a"
@@ -78,27 +78,29 @@ const NavItem = ({ icon, children, ...rest }) => {
       _focus={{ boxShadow: "none" }}
       color={"white"}
     >
-      <Flex
-        align="center"
-        p="4"
-        mx="4"
-        borderRadius="lg"
-        role="group"
-        cursor="pointer"
-        {...rest}
-      >
-        {icon && (
-          <Icon
-            mr="4"
-            fontSize="16"
-            _groupHover={{
-              color: "white",
-            }}
-            as={icon}
-          />
-        )}
-        {children}
-      </Flex>
+      <Link to={link}>
+        <Flex
+          align="center"
+          p="4"
+          mx="4"
+          borderRadius="lg"
+          role="group"
+          cursor="pointer"
+          {...rest}
+        >
+          {icon && (
+            <Icon
+              mr="4"
+              fontSize="16"
+              _groupHover={{
+                color: "white",
+              }}
+              as={icon}
+            />
+          )}
+          {children}
+        </Flex>
+      </Link>
     </Box>
   );
 };
@@ -106,6 +108,7 @@ const NavItem = ({ icon, children, ...rest }) => {
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
     <Flex
+      zIndex={20}
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
@@ -141,7 +144,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-        <Flex alignItems={"center"}>
+        <Flex alignItems={"center"} zIndex={20}>
           <Menu>
             <MenuButton
               py={2}
@@ -194,14 +197,16 @@ const SideBar = ({ children }) => {
   return (
     <Box
       bg={"#FAF0E7"}
-      h={{
+      minH={{
         base: "100%",
         md: "100vh",
       }}
+      zIndex={20}
     >
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
+        zIndex={20}
       />
       <Drawer
         isOpen={isOpen}
@@ -210,16 +215,15 @@ const SideBar = ({ children }) => {
         returnFocusOnClose={false}
         onOverlayClick={onClose}
         size="full"
+        zIndex={20}
       >
         <DrawerContent>
-          <SidebarContent onClose={onClose} />
+          <SidebarContent onClose={onClose} zIndex={20} />
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
-      </Box>
+      <Box ml={{ base: 0, md: 60 }}>{children}</Box>
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { Flex, Text, Stack, Box } from "@chakra-ui/react";
+import { Flex, Text, Stack } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
 import a1 from "../../assets/images/a1.png";
 import a2 from "../../assets/images/a2.png";
@@ -7,21 +7,12 @@ import a4 from "../../assets/images/a4.png";
 import a5 from "../../assets/images/a5.png";
 
 import "@fontsource/open-sans/700.css";
+import GradientLine from "../gradient/GradientLine";
 
 function MeetOurInvestors() {
   return (
     <>
-      <Box
-        w={"100%"}
-        height={"20px"}
-        bg={
-          " linear-gradient(90deg, #FAF0E7 -0.55%, #5A7729 14.44%, #39807F 31.42%, #5A7729 48.4%, #4BB543 64.38%, #A8BE38 81.86%, #4BB543 99.34%)"
-        }
-        position={"relative"}
-        filter={"blur(10px)"}
-        transform={"translateY(3px)"}
-        zIndex={-1}
-      />
+      <GradientLine />
       <Flex justifyContent="center" alignItems="center" pt={8} pb={8}>
         <Stack spacing={4} align={"center"} p={8}>
           <Text fontSize="48px" fontWeight="700" color="black">
@@ -78,17 +69,7 @@ function MeetOurInvestors() {
           </Stack>
         </Stack>
       </Flex>
-      <Box
-        w={"100%"}
-        height={"20px"}
-        bg={
-          " linear-gradient(90deg, #FAF0E7 -0.55%, #5A7729 14.44%, #39807F 31.42%, #5A7729 48.4%, #4BB543 64.38%, #A8BE38 81.86%, #4BB543 99.34%)"
-        }
-        position={"relative"}
-        filter={"blur(10px)"}
-        transform={"translateY(3px)"}
-        zIndex={-1}
-      />
+      <GradientLine />
     </>
   );
 }

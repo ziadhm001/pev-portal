@@ -9,7 +9,7 @@ function AddEditProfile() {
   const [showPassword1, setShowPassword1] = React.useState(false);
   const [showPassword2, setShowPassword2] = React.useState(false);
   const [showPassword3, setShowPassword3] = React.useState(false);
-  const isEditing = false;
+  const isEditing = true;
   const completeProfileInformationForm = useFormik({
     initialValues: {
       profilePicture: "",
