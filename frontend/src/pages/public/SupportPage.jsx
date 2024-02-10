@@ -4,6 +4,7 @@ import DefaultLayout from "../../layouts/DefaultLayout";
 function SupportPage() {
   return (
     <DefaultLayout>
+      <br />
       <FAQ />
     </DefaultLayout>
   );

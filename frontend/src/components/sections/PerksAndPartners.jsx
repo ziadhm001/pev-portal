@@ -32,7 +32,7 @@ function PerksAndPartners() {
             p={8}
             alignItems={"center"}
           >
-            {/* <svg
+            <svg
               //   width="331"
               height="60"
               viewBox="0 0 331 60"
@@ -371,7 +371,7 @@ function PerksAndPartners() {
                   <stop offset="1" stopColor="#3D9BA2" />
                 </linearGradient>
               </defs>
-            </svg> */}
+            </svg>
           </Stack>
           <Stack
             direction={{
@@ -381,7 +381,7 @@ function PerksAndPartners() {
             spacing={4}
             align={"center"}
           >
-            {/* <svg
+            <svg
               width="304"
               height="58"
               viewBox="0 0 304 58"
@@ -480,7 +480,7 @@ function PerksAndPartners() {
                 d="M313.93 40.8877V50.5478H323.591V40.8877H313.93Z"
                 fill="#E4E4E7"
               />
-            </svg> */}
+            </svg>
           </Stack>
         </Stack>
       </Container>

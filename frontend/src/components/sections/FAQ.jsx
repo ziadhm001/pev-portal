@@ -36,50 +36,58 @@ function FAQ() {
       pb={8}
       boxShadow={"0px 2px 20px 1px #00000045"}
     >
-      <Container maxW={"container.lg"}>
-        <Stack
-          spacing={4}
-          align={"center"}
-          p={8}
-          alignContent={"center"}
-          justifyContent={"center"}
-        >
-          <Text fontSize="48px" fontWeight="700" color="black">
-            {" "}
-            Frequently asked questions
-          </Text>
-          <Text>
-            {" "}
-            Everything you need to know about the product and billing.
-          </Text>
+      <Stack
+        spacing={4}
+        px={{
+          md: "200px",
+        }}
+        w={"100%"}
+      >
+        <Container maxW={"container.lg"}>
+          <Stack
+            spacing={4}
+            align={"center"}
+            p={8}
+            alignContent={"center"}
+            justifyContent={"center"}
+          >
+            <Text fontSize="48px" fontWeight="700" color="black">
+              {" "}
+              Frequently asked questions
+            </Text>
+            <Text>
+              {" "}
+              Everything you need to know about the product and billing.
+            </Text>
 
-          <Accordion allowMultiple w={"100%"}>
-            {questions.map((q, i) => (
-              <AccordionItem key={i}>
-                {({ isExpanded }) => (
-                  <>
-                    <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" py={3}>
-                        {q.question}
-                      </Box>
-                      {isExpanded ? (
-                        <MinusIcon fontSize="12px" />
-                      ) : (
-                        <AddIcon fontSize="12px" />
-                      )}
-                    </AccordionButton>
+            <Accordion allowMultiple w={"100%"}>
+              {questions.map((q, i) => (
+                <AccordionItem key={i}>
+                  {({ isExpanded }) => (
+                    <>
+                      <AccordionButton>
+                        <Box as="span" flex="1" textAlign="left" py={3}>
+                          {q.question}
+                        </Box>
+                        {isExpanded ? (
+                          <MinusIcon fontSize="12px" />
+                        ) : (
+                          <AddIcon fontSize="12px" />
+                        )}
+                      </AccordionButton>
 
-                    <AccordionPanel pb={4}>
-                      <Text>{q.answer}</Text>
-                    </AccordionPanel>
-                  </>
-                )}
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </Stack>
+                      <AccordionPanel pb={4}>
+                        <Text>{q.answer}</Text>
+                      </AccordionPanel>
+                    </>
+                  )}
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </Stack>
+        </Container>
         <StillHavQuestions />
-      </Container>
+      </Stack>
     </Flex>
   );
 }

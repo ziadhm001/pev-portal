@@ -12,7 +12,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo1 from "../../assets/images/logo1.png";
 
 export default function NavBar() {
@@ -124,14 +124,18 @@ const DesktopNav = () => {
   return (
     <Stack direction={"row"} spacing={4} align={"center"}>
       {NAV_ITEMS.map((navItem) => (
-        <Box
-          key={navItem.label}
-          p={5}
-          color={linkColor}
-          _hover={{ color: linkHoverColor }}
-        >
-          {navItem.label}
-        </Box>
+        <>
+          <Link to={navItem.href}>
+            <Box
+              key={navItem.label}
+              p={5}
+              color={linkColor}
+              _hover={{ color: linkHoverColor }}
+            >
+              {navItem.label}
+            </Box>
+          </Link>
+        </>
       ))}
     </Stack>
   );
@@ -159,19 +163,20 @@ const MobileNavItem = ({ label, children, href }) => {
       <Box
         py={2}
         as="a"
-        href={href ?? "#"}
         justifyContent="space-between"
         alignItems="center"
         _hover={{
           textDecoration: "none",
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
-          {label}
-        </Text>
+        <Link to={href} key={label}>
+          <Text
+            fontWeight={600}
+            color={useColorModeValue("gray.600", "gray.200")}
+          >
+            {label}
+          </Text>
+        </Link>
         {children && (
           <Icon
             as={ChevronDownIcon}
@@ -194,9 +199,11 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map((child) => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Box>
+              <Link to={child.href} key={child.label}>
+                <Box as="a" key={child.label} py={2}>
+                  {child.label}
+                </Box>
+              </Link>
             ))}
         </Stack>
       </Collapse>
@@ -206,19 +213,23 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "Inspiration",
+    label: "Programs",
     href: "#",
   },
   {
-    label: "Find Work",
+    label: "Services",
     href: "#",
   },
   {
-    label: "Learn Design",
+    label: "Support",
+    href: "/support",
+  },
+  {
+    label: "Blog",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "About Us",
     href: "#",
   },
 ];
