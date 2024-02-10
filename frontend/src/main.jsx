@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import "./index.css";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   fonts: {
     heading: "Open-sans, sans-serif",
     body: "open-sans, sans-serif",
+    catchye: "Catchye, sans-serif",
   },
   colors: {
     brand: {

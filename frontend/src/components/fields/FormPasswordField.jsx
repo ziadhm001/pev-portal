@@ -31,6 +31,7 @@ function FormPasswordField({
       <FormLabel>{label}</FormLabel>
       <InputGroup>
         <Input
+          border={"1px solid"}
           type={showPassword ? "text" : "password"}
           value={value}
           onChange={onChange}

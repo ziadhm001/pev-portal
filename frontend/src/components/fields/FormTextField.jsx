@@ -26,6 +26,7 @@ function FormTextField({
     <FormControl id={name} isRequired isInvalid={isInvalid}>
       <FormLabel>{label}</FormLabel>
       <Input
+        border={"1px solid"}
         type={type}
         value={value}
         onChange={(e) => {
