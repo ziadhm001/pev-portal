@@ -58,7 +58,7 @@ function LandingComponent({ onClick }) {
               w={"60px"}
               h={"60px"}
               onClick={onClick}
-              zIndex={30}
+              zIndex={1}
             >
               <FiArrowDown size={"md"} />
             </IconButton>
