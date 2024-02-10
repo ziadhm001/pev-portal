@@ -25,14 +25,18 @@ export default function NavBar() {
       w={"100%"}
       zIndex={4}
       boxShadow={"1px 1px 10px 1px"}
+      m={0}
     >
       <Flex
         bg={"brand.400"}
         color={"white"}
         minH={"60px"}
         py={{ base: 2 }}
-        px={{ base: 4 }}
         align={"center"}
+        px={{
+          base: 4,
+          md: 12,
+        }}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
