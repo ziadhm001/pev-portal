@@ -4,6 +4,7 @@ import GradientLine from "../gradient/GradientLine";
 import { useNavigate } from "react-router-dom";
 function CallToAction() {
   const navigate = useNavigate();
+  const user = localStorage.getItem('user')
   return (
     <>
       <GradientLine />
@@ -97,7 +98,10 @@ function CallToAction() {
                 height={"56px"}
                 w={"200px"}
                 onClick={() => {
-                  navigate("/user/profile");
+                  if(user)
+                    navigate("/user/profile");
+                  else
+                    navigate("/login")
                 }}
               >
                 Apply Now

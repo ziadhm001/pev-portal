@@ -4,6 +4,7 @@ import { FiArrowDown, FiInfo, FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 function LandingComponent({ onClick }) {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user'))
   return (
     <Flex
       h={"103vh"}
@@ -43,7 +44,10 @@ function LandingComponent({ onClick }) {
                 bg={"brand.300"}
                 size="lg"
                 onClick={() => {
-                  navigate("/user/profile");
+                  if(user)
+                    navigate("/user/profile");
+                  else
+                    navigate("/login")
                 }}
               >
                 Apply

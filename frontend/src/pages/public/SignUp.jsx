@@ -4,11 +4,14 @@ import { useFormik } from "formik";
 import FormPasswordField from "../../components/fields/FormPasswordField";
 import React from "react";
 import RegisterationLayout from "../../layouts/RegisterationLayout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import authService from "../../services/auth.service";
 
 function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
+  const [error, setError] = React.useState('')
+  const navigate = useNavigate();
   const registerFormik = useFormik({
     initialValues: {
       firstName: "",
@@ -17,7 +20,9 @@ function SignUp() {
       password: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      authService.register(values.firstName, values.lastName, values.email, values.password).then(() => navigate('/')).catch(err => {
+        setError(err.response.data.error.msg)
+      })
     },
   });
   return (
@@ -37,7 +42,9 @@ function SignUp() {
               <Text fontSize="14px" color={"#667085"}>
                 Please Enter your credentials carefully to access your account
               </Text>
-
+              <Text fontSize="14px" color={"red"}>
+                {error}
+              </Text>
               <Stack
                 spacing={4}
                 direction={{ base: "column", md: "row" }}
@@ -86,7 +93,7 @@ function SignUp() {
                 touched={registerFormik.touched.password}
                 helperText={"Password must be at least 8 characters"}
               />
-              <Button bg="brand.300" color={"white"} size="lg" type="submit">
+              <Button bg="brand.300" color={"white"} size="lg" type="submit" onClick={registerFormik.handleSubmit}>
                 Continue
               </Button>
             </Stack>

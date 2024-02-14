@@ -10,15 +10,27 @@ import {
   useColorModeValue,
   useDisclosure,
   Image,
+  HStack,
+  Avatar,
+  VStack,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  MenuButton,
+  Menu,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 import logo1 from "../../assets/images/logo1.png";
+import { FiChevronDown } from "react-icons/fi";
+import authService from "../../services/auth.service";
 
 export default function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user'))
 
+  const username = user ? user.user.firstName + " " + user.user.lastName : null
   return (
     <Box
       position={"fixed"}
@@ -79,7 +91,44 @@ export default function NavBar() {
             <DesktopNav />
           </Flex>
         </Flex>
-
+        <Stack justify={"flex-end"} direction={"row"} spacing={6}>
+          
+        </Stack>
+        {
+          user ? 
+          <Menu>
+            <MenuButton
+              py={2}
+              transition="all 0.3s"
+              _focus={{ boxShadow: "none" }}
+            >
+              <HStack>
+                <Avatar
+                  size={"sm"}
+                />
+                <VStack
+                  display={{ base: "none", md: "flex" }}
+                  alignItems="flex-start"
+                  spacing="1px"
+                  ml="2"
+                >
+                  <Text fontSize="sm">{username}</Text>
+                </VStack>
+                <Box display={{ base: "none", md: "flex" }}>
+                  <FiChevronDown />
+                </Box>
+              </HStack>
+            </MenuButton>
+            <MenuList
+              bg={useColorModeValue("white", "gray.900")}
+              borderColor={useColorModeValue("gray.200", "gray.700")}
+            >
+              <MenuItem onClick={() => {navigate('/user/profile')}} style={{color: 'black'}}>Profile</MenuItem>
+              <MenuDivider />
+              <MenuItem onClick={() => {authService.logout(); navigate('/')}} style={{color: 'black'}}>Sign out</MenuItem>
+            </MenuList>
+          </Menu>
+          :
         <Stack justify={"flex-end"} direction={"row"} spacing={6}>
           <Button
             as={"a"}
@@ -89,7 +138,7 @@ export default function NavBar() {
             href={"#"}
             color={"white"}
             onClick={() => navigate("/login")}
-          >
+            >
             Sign In
           </Button>
           <Button
@@ -104,10 +153,11 @@ export default function NavBar() {
               bg: "brand.400",
             }}
             onClick={() => navigate("/register")}
-          >
+            >
             Sign Up
           </Button>
         </Stack>
+        }
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>

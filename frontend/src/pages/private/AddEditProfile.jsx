@@ -6,17 +6,16 @@ import FormPasswordField from "../../components/fields/FormPasswordField";
 import React from "react";
 import ProfilePictureField from "../../components/fields/ProfilePictureField";
 function AddEditProfile() {
+  const user = JSON.parse(localStorage.getItem('user'))
   const [showPassword1, setShowPassword1] = React.useState(false);
   const [showPassword2, setShowPassword2] = React.useState(false);
   const [showPassword3, setShowPassword3] = React.useState(false);
   const isEditing = true;
   const completeProfileInformationForm = useFormik({
     initialValues: {
-      profilePicture: "",
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
-      email: "",
+      firstName: user.user.firstName,
+      lastName: user.user.lastName,
+      email: user.user.email,
       oldPassword: "",
       newPassword: "",
       confirmPassword: "",
@@ -53,11 +52,11 @@ function AddEditProfile() {
               name={"firstName"}
               type={"text"}
               placeholder={"Enter your first name"}
-              value={completeProfileInformationForm.values.firstName}
+              value={user.user.firstName}
+              disabled
               onChange={completeProfileInformationForm.handleChange}
               error={completeProfileInformationForm.errors.firstName}
               touched={completeProfileInformationForm.touched.firstName}
-              helperText={"Enter your first name"}
               bg={"white"}
             />
             <FormTextField
@@ -65,11 +64,11 @@ function AddEditProfile() {
               name={"lastName"}
               type={"text"}
               placeholder={"Enter your last name"}
-              value={completeProfileInformationForm.values.lastName}
+              value={user.user.lastName}
+              disabled
               onChange={completeProfileInformationForm.handleChange}
               error={completeProfileInformationForm.errors.lastName}
               touched={completeProfileInformationForm.touched.lastName}
-              helperText={"Enter your last name"}
               bg={"white"}
             />
           </Stack>
@@ -78,7 +77,8 @@ function AddEditProfile() {
             name={"email"}
             type={"email"}
             placeholder={"Enter your email"}
-            value={completeProfileInformationForm.values.email}
+            value={user.user.email}
+            disabled
             onChange={completeProfileInformationForm.handleChange}
             error={completeProfileInformationForm.errors.email}
             touched={completeProfileInformationForm.touched.email}
@@ -141,7 +141,7 @@ function AddEditProfile() {
             <Button bg={"white"} variant={"outline"} color={"#4BB543"}>
               Cancel
             </Button>
-            <Button bg="#4BB543" color={"white"}>
+            <Button bg="#4BB543" color={"white"} onClick={completeProfileInformationForm.handleSubmit}>
               Save
             </Button>
           </Stack>
