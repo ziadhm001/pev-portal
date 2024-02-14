@@ -2,12 +2,11 @@ import axios from "axios";
 import TokenService from "./token.service";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5001/api",
+  baseURL: import.meta.env.VITE_BASE_URL + "/api",
   headers: {
-    "Content-Type": "application/json"
-  }
-})
-
+    "Content-Type": "application/json",
+  },
+});
 
 instance.interceptors.request.use(
   (config) => {
