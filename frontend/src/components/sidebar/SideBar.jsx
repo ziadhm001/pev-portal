@@ -104,11 +104,10 @@ const NavItem = ({ icon, link, children, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
-  const navigate = useNavigate()
-  const user = JSON.parse(localStorage.getItem('user'))
-  if(!user)
-    navigate('/')
-  const username = user.user.firstName + " " +user.user.lastName
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) navigate("/");
+  const username = user.user.firstName + " " + user.user.lastName;
   return (
     <Flex
       zIndex={20}
@@ -155,16 +154,16 @@ const MobileNav = ({ onOpen, ...rest }) => {
               _focus={{ boxShadow: "none" }}
             >
               <HStack>
-                <Avatar
-                  size={"sm"}
-                />
+                <Avatar size={"sm"} />
                 <VStack
                   display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm" color="white">{username}</Text>
+                  <Text fontSize="sm" color="white">
+                    {username}
+                  </Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
@@ -175,9 +174,22 @@ const MobileNav = ({ onOpen, ...rest }) => {
               bg={useColorModeValue("white", "gray.900")}
               borderColor={useColorModeValue("gray.200", "gray.700")}
             >
-              <MenuItem onClick={() => {navigate('/user/profile')}}>Profile</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/user/profile");
+                }}
+              >
+                Profile
+              </MenuItem>
               <MenuDivider />
-              <MenuItem onClick={() => {authService.logout(); navigate('/')}}>Sign out</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  authService.logout();
+                  navigate("/");
+                }}
+              >
+                Sign out
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>

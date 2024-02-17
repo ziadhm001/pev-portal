@@ -26,6 +26,7 @@ function FormTextArea({
     <FormControl id={name} isRequired isInvalid={isInvalid}>
       <FormLabel>{label}</FormLabel>
       <Textarea
+        border={"1px solid"}
         type={type}
         value={value}
         onChange={(e) => {

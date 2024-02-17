@@ -1,23 +1,22 @@
 import {
+  Checkbox,
+  CheckboxGroup,
   FormControl,
-  FormLabel,
   FormErrorMessage,
   FormHelperText,
-  Select,
+  FormLabel,
+  Stack,
 } from "@chakra-ui/react";
 
-function FormSelectField({
-  setValue,
+function CheckBoxGroupField({
   label,
   name,
-  allOptions,
-  placeholder,
-  value,
-  onChange,
+  values,
+  setFieldValues,
   error,
   touched,
   helperText,
-  ...rest
+  options,
 }) {
   const isError = error !== undefined;
   const isTouched = touched !== undefined;
@@ -25,23 +24,24 @@ function FormSelectField({
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
       <FormLabel>{label}</FormLabel>
-      <Select
-        border={"1px solid"}
-        value={value}
-        placeholder={placeholder}
-        onChange={onChange}
-        {...rest}
+      <CheckboxGroup
+        value={values}
+        onChange={(str) => {
+          setFieldValues(str);
+        }}
       >
-        {allOptions.map((xOption) => (
-          <option key={xOption.code} value={xOption.code}>
-            {xOption.name}
-          </option>
-        ))}
-      </Select>
+        <Stack>
+          {options.map((option) => (
+            <Checkbox key={option.value} value={option.value}>
+              {option.label}
+            </Checkbox>
+          ))}
+        </Stack>
+      </CheckboxGroup>
       <FormHelperText>{!error && helperText}</FormHelperText>
       <FormErrorMessage>{isInvalid && error}</FormErrorMessage>
     </FormControl>
   );
 }
 
-export default FormSelectField;
+export default CheckBoxGroupField;
