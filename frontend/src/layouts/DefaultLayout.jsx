@@ -4,9 +4,10 @@ import Footer from "../components/footer/Footer";
 function DefaultLayout({ children, transparencyPercentage }) {
   return (
     <>
-      <NavBar transparencyPercentage={transparencyPercentage} />
+      <NavBar transparency={transparencyPercentage} />
       {children}
-      <Footer />
+
+      {!transparencyPercentage && <Footer />}
     </>
   );
 }

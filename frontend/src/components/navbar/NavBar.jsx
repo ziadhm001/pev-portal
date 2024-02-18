@@ -25,7 +25,7 @@ import logo1 from "../../assets/images/logo1.png";
 import { FiChevronDown } from "react-icons/fi";
 import authService from "../../services/auth.service";
 
-export default function NavBar() {
+export default function NavBar({transparency}) {
   const { isOpen, onToggle } = useDisclosure();
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'))
@@ -40,7 +40,7 @@ export default function NavBar() {
       m={0}
     >
       <Flex
-        bg={"brand.400"}
+        bg={transparency ? "transparent" : "brand.400"}
         color={"white"}
         minH={"60px"}
         py={{ base: 2 }}

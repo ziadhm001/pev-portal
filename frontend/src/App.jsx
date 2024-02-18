@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import SignUp from "./pages/public/SignUp";
 import Login from "./pages/public/Login";
@@ -11,6 +11,7 @@ import ApplicationForm from "./pages/private/ApplicationForm";
 import ContactUs from "./pages/public/ContactUs";
 
 function App() {
+  const ref = useRef(null);
   return (
     <React.Fragment>
       <Router>
@@ -28,7 +29,7 @@ function App() {
           />
           <Route
             path="/user/application-form2"
-            element={<ApplicationForm2 />}
+            element={<ApplicationForm2 ref={ref} />}
           />
           <Route path="/contact-us" element={<ContactUs />} />
         </Routes>

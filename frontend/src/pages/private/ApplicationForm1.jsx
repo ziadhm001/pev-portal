@@ -30,6 +30,8 @@ function ApplicationForm1() {
       console.log(values);
     },
   });
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
 
   const startupDataForm = useFormik({
     initialValues: {
