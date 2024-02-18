@@ -9,7 +9,7 @@ import CheckBoxGroupField from "../../components/fields/CheckBoxGroupField";
 import GreenOutlinedButton from "../../components/buttons/GreenOutlinedButton";
 import GreenButton from "../../components/buttons/GreenButton";
 
-function ApplicationForm2() {
+function ApplicationForm2({ref}) {
   const startupSpecificData = useFormik({
     initialValues: {
       oneLineSummary: "",
@@ -57,10 +57,11 @@ function ApplicationForm2() {
         "",
     },
   });
-
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <SideBar>
-      <Stack w={"100%"} p={10} spacing={20}>
+      <Stack w={"100%"} p={10} spacing={20} ref={ref}>
         <Stack w={"100%"} spacing={10} color={"brand.500"}>
           <Text color={"#4BB543"} borderBottom={"2px solid"}>
             Problem Solving

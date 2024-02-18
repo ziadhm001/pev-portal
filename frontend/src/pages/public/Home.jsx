@@ -1,4 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValueEvent, useScroll, useSpring } from "framer-motion"
+
 import CallToAction from "../../components/sections/CallToAction";
 import FAQ from "../../components/sections/FAQ";
 import LandingComponent from "../../components/sections/LandingComponent";
@@ -11,22 +13,35 @@ import VideoSection from "../../components/sections/VideoSection";
 import DefaultLayout from "../../layouts/DefaultLayout";
 
 function Home() {
+  const [showLanding, setShowLanding] = useState(true)
   const ref = useRef(null);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if(!latest)
+      setShowLanding(true)
+  })
+
   const scrollToRef = () => {
+    setShowLanding(false)
+    };
+  useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  console.log(ref.current);
+  }, [ref, showLanding])
   return (
-    <DefaultLayout>
+    <DefaultLayout transparencyPercentage={showLanding}>
       <LandingComponent onClick={scrollToRef} />
-      <VideoSection myRef={ref} />
-      <QuoteSection />
-      <Strap />
-      <CallToAction />
-      <PerksAndPartners />
-      <MeetOurInvestors />
-      <OurTrackRecord />
-      <FAQ />
+      {
+        !showLanding && <>
+        <VideoSection myRef={ref} />
+        <QuoteSection />
+        <Strap />
+        <CallToAction />
+        <PerksAndPartners />
+        <MeetOurInvestors />
+        <OurTrackRecord />
+        <FAQ />
+        </>
+      }
     </DefaultLayout>
   );
 }
