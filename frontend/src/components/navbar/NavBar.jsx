@@ -28,9 +28,9 @@ import authService from "../../services/auth.service";
 export default function NavBar({transparency}) {
   const { isOpen, onToggle } = useDisclosure();
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user'))
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  const username = user ? user.user.firstName + " " + user.user.lastName : null
+  const username = user ? user.user.firstName + " " + user.user.lastName : null;
   return (
     <Box
       position={"fixed"}
@@ -91,11 +91,8 @@ export default function NavBar({transparency}) {
             <DesktopNav />
           </Flex>
         </Flex>
-        <Stack justify={"flex-end"} direction={"row"} spacing={6}>
-          
-        </Stack>
-        {
-          user ? 
+        <Stack justify={"flex-end"} direction={"row"} spacing={6}></Stack>
+        {user ? (
           <Menu>
             <MenuButton
               py={2}
@@ -103,9 +100,7 @@ export default function NavBar({transparency}) {
               _focus={{ boxShadow: "none" }}
             >
               <HStack>
-                <Avatar
-                  size={"sm"}
-                />
+                <Avatar size={"sm"} />
                 <VStack
                   display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
@@ -123,41 +118,56 @@ export default function NavBar({transparency}) {
               bg={useColorModeValue("white", "gray.900")}
               borderColor={useColorModeValue("gray.200", "gray.700")}
             >
-              <MenuItem onClick={() => {navigate('/user/profile')}} style={{color: 'black'}}>Profile</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/user/profile");
+                }}
+                style={{ color: "black" }}
+              >
+                Profile
+              </MenuItem>
               <MenuDivider />
-              <MenuItem onClick={() => {authService.logout(); navigate('/')}} style={{color: 'black'}}>Sign out</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  authService.logout();
+                  navigate("/");
+                }}
+                style={{ color: "black" }}
+              >
+                Sign out
+              </MenuItem>
             </MenuList>
           </Menu>
-          :
-        <Stack justify={"flex-end"} direction={"row"} spacing={6}>
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-            color={"white"}
-            onClick={() => navigate("/login")}
+        ) : (
+          <Stack justify={"flex-end"} direction={"row"} spacing={6}>
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+              color={"white"}
+              onClick={() => navigate("/login")}
             >
-            Sign In
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"brand.300"}
-            href={"#"}
-            _hover={{
-              bg: "brand.400",
-            }}
-            onClick={() => navigate("/register")}
+              Sign In
+            </Button>
+            <Button
+              as={"a"}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"brand.300"}
+              href={"#"}
+              _hover={{
+                bg: "brand.400",
+              }}
+              onClick={() => navigate("/register")}
             >
-            Sign Up
-          </Button>
-        </Stack>
-        }
+              Sign Up
+            </Button>
+          </Stack>
+        )}
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -267,8 +277,8 @@ const NAV_ITEMS = [
     href: "#",
   },
   {
-    label: "Services",
-    href: "#",
+    label: "Contact Us",
+    href: "/contact-us",
   },
   {
     label: "Support",
@@ -280,6 +290,6 @@ const NAV_ITEMS = [
   },
   {
     label: "About Us",
-    href: "#",
+    href: "/about-us",
   },
 ];
