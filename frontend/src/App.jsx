@@ -8,6 +8,7 @@ import AddEditProfile from "./pages/private/AddEditProfile";
 import ApplicationForm1 from "./pages/private/ApplicationForm1";
 import ApplicationForm2 from "./pages/private/ApplicationForm2";
 import ApplicationForm from "./pages/private/ApplicationForm";
+import ContactUs from "./pages/public/ContactUs";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             path="/user/application-form2"
             element={<ApplicationForm2 />}
           />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </Router>
     </React.Fragment>
