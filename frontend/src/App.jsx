@@ -3,11 +3,13 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import SignUp from "./pages/public/SignUp";
 import Login from "./pages/public/Login";
 import Home from "./pages/public/Home";
+import ProgramPage from "./pages/public/ProgramPage";
 import SupportPage from "./pages/public/SupportPage";
 import AddEditProfile from "./pages/private/AddEditProfile";
 import ApplicationForm1 from "./pages/private/ApplicationForm1";
 import ApplicationForm2 from "./pages/private/ApplicationForm2";
 import ApplicationForm from "./pages/private/ApplicationForm";
+import Partner from "./pages/public/Partner";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/programs" element={<ProgramPage />} />
+          <Route path="/partner" element={<Partner />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/login" element={<Login />} />

@@ -7,7 +7,7 @@ import a3 from "../../assets/images/a3.png";
 function StillHavQuestions() {
   return (
     <Flex
-      bg={"beige"}
+      bg={"#FAF0E7"}
       justifyContent="center"
       alignItems="center"
       p={4}
