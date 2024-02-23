@@ -11,6 +11,7 @@ import ApplicationForm2 from "./pages/private/ApplicationForm2";
 import ApplicationForm from "./pages/private/ApplicationForm";
 import ContactUs from "./pages/public/ContactUs";
 import Partner from "./pages/public/Partner";
+import Events from "./pages/public/Events";
 
 function App() {
   const ref = useRef(null);
@@ -22,6 +23,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/programs" element={<ProgramPage />} />
           <Route path="/partner" element={<Partner />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
