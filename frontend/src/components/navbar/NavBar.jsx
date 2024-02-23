@@ -281,6 +281,10 @@ const NAV_ITEMS = [
     href: "/partner",
   },
   {
+    label: "Events",
+    href: "/events",
+  },
+  {
     label: "Support",
     href: "/support",
   },
