@@ -9,6 +9,7 @@ import ApplicationForm1 from "./pages/private/ApplicationForm1";
 import ApplicationForm2 from "./pages/private/ApplicationForm2";
 import ApplicationForm from "./pages/private/ApplicationForm";
 import ContactUs from "./pages/public/ContactUs";
+import AboutUs from "./pages/public/AboutUs";
 
 function App() {
   const ref = useRef(null);
@@ -32,6 +33,7 @@ function App() {
             element={<ApplicationForm2 ref={ref} />}
           />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </Router>
     </React.Fragment>
