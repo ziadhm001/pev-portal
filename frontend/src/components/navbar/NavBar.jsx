@@ -183,20 +183,28 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={"row"} spacing={4} align={"center"}>
-      {NAV_ITEMS.map((navItem) => (
-        <>
-          <Link to={navItem.href}>
-            <Box
-              key={navItem.label}
-              p={5}
-              color={linkColor}
-              _hover={{ color: linkHoverColor }}
-            >
-              {navItem.label}
-            </Box>
-          </Link>
-        </>
-      ))}
+      {NAV_ITEMS.map((navItem) =>
+        navItem?.type == "dropdown" ? (
+          <DropdownNavItem
+            key={navItem.label}
+            items={navItem.children}
+            label={navItem.label}
+          />
+        ) : (
+          <>
+            <Link to={navItem.href}>
+              <Box
+                key={navItem.label}
+                p={5}
+                color={linkColor}
+                _hover={{ color: linkHoverColor }}
+              >
+                {navItem.label}
+              </Box>
+            </Link>
+          </>
+        )
+      )}
     </Stack>
   );
 };
@@ -271,14 +279,55 @@ const MobileNavItem = ({ label, children, href }) => {
   );
 };
 
+const DropdownNavItem = ({ label, items }) => {
+  const navigate = useNavigate();
+  return (
+    <Menu>
+      <MenuButton>{label}</MenuButton>
+      <MenuList>
+        {items?.map((item) => (
+          <MenuItem
+            style={{
+              color: "black",
+            }}
+            key={item.label}
+            onClick={() => navigate(item.href)}
+          >
+            {item.label}
+          </MenuItem>
+        ))}
+      </MenuList>
+    </Menu>
+  );
+};
+
 const NAV_ITEMS = [
   {
     label: "Programs",
     href: "/programs",
+    type: "dropdown",
+    children: [
+      {
+        label: "Program Overview",
+        href: "/program-overview",
+      },
+      {
+        label: "Program Core",
+        href: "/program-core",
+      },
+      {
+        label: "Program Support",
+        href: "/post-program-support",
+      },
+    ],
   },
   {
     label: "Partners",
     href: "/partner",
+  },
+  {
+    label: "Careers",
+    href: "/careers",
   },
   {
     label: "Events",

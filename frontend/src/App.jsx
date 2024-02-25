@@ -11,6 +11,9 @@ import ApplicationForm2 from "./pages/private/ApplicationForm2";
 import ApplicationForm from "./pages/private/ApplicationForm";
 import Partner from "./pages/public/Partner";
 import Events from "./pages/public/Events";
+import CoreProgram from "./pages/public/CoreProgram";
+import SupportProgram from "./pages/public/SupportProgram";
+import Careers from "./pages/public/Careers";
 
 function App() {
   return (
@@ -19,10 +22,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/programs" element={<ProgramPage />} />
+          <Route path="/program-overview" element={<ProgramPage />} />
+          <Route path="/program-core" element={<CoreProgram />} />
+          <Route path="/post-program-support" element={<SupportProgram />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/events" element={<Events />} />
           <Route path="/support" element={<SupportPage />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/user/profile" element={<AddEditProfile />} />
