@@ -45,7 +45,7 @@ function LandingComponent({ onClick }) {
                 size="lg"
                 onClick={() => {
                   if(user)
-                    navigate("/user/profile");
+                    navigate("/user/application-form");
                   else
                     navigate("/login")
                 }}

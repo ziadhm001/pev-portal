@@ -26,7 +26,6 @@ import { FiChevronDown } from "react-icons/fi";
 import authService from "../../services/auth.service";
 
 export default function NavBar({transparency}) {
-export default function NavBar({transparency}) {
   const { isOpen, onToggle } = useDisclosure();
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
@@ -41,7 +40,6 @@ export default function NavBar({transparency}) {
       m={0}
     >
       <Flex
-        bg={transparency ? "transparent" : "brand.400"}
         bg={transparency ? "transparent" : "brand.400"}
         color={"white"}
         minH={"60px"}
@@ -128,24 +126,7 @@ export default function NavBar({transparency}) {
               >
                 Profile
               </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  navigate("/user/profile");
-                }}
-                style={{ color: "black" }}
-              >
-                Profile
-              </MenuItem>
               <MenuDivider />
-              <MenuItem
-                onClick={() => {
-                  authService.logout();
-                  navigate("/");
-                }}
-                style={{ color: "black" }}
-              >
-                Sign out
-              </MenuItem>
               <MenuItem
                 onClick={() => {
                   authService.logout();
@@ -167,31 +148,7 @@ export default function NavBar({transparency}) {
               href={"#"}
               color={"white"}
               onClick={() => navigate("/login")}
-        ) : (
-          <Stack justify={"flex-end"} direction={"row"} spacing={6}>
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"#"}
-              color={"white"}
-              onClick={() => navigate("/login")}
             >
-              Sign In
-            </Button>
-            <Button
-              as={"a"}
-              display={{ base: "none", md: "inline-flex" }}
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              bg={"brand.300"}
-              href={"#"}
-              _hover={{
-                bg: "brand.400",
-              }}
-              onClick={() => navigate("/register")}
               Sign In
             </Button>
             <Button
@@ -314,26 +271,30 @@ const MobileNavItem = ({ label, children, href }) => {
   );
 };
 
+
 const NAV_ITEMS = [
   {
     label: "Programs",
     href: "/programs",
   },
   {
-    label: "Services",
-    href: "#",
+    label: "Partners",
+    href: "/partner",
+  },
+  {
+    label: "Events",
+    href: "/events"
   },
   {
     label: "Support",
     href: "/support",
   },
-
   {
     label: "About Us",
-    href: "#",
+    href: "/about-us",
   },
   {
-    label: "About Us",
-    href: "#",
+    label: "Contact Us",
+    href: "/contact-us",
   },
 ];

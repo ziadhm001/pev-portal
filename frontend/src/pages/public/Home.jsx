@@ -29,7 +29,6 @@ function Home() {
   }, [ref, showLanding])
   return (
     <DefaultLayout transparencyPercentage={showLanding}>
-    <DefaultLayout transparencyPercentage={showLanding}>
       <LandingComponent onClick={scrollToRef} />
       {
         !showLanding && <>

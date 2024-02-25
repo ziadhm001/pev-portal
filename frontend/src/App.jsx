@@ -10,7 +10,9 @@ import ApplicationForm1 from "./pages/private/ApplicationForm1";
 import ApplicationForm2 from "./pages/private/ApplicationForm2";
 import ApplicationForm from "./pages/private/ApplicationForm";
 import ContactUs from "./pages/public/ContactUs";
-
+import Partner from "./pages/public/Partner";
+import Events from "./pages/public/Events";
+import AboutUs from "./pages/public/AboutUs";
 function App() {
   const ref = useRef(null);
   return (

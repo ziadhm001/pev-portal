@@ -11,9 +11,22 @@ import CheckBoxGroupField from "../../components/fields/CheckBoxGroupField";
 import GreenButton from "../../components/buttons/GreenButton";
 import GreenOutlinedButton from "../../components/buttons/GreenOutlinedButton";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function ApplicationForm1() {
   const navigate = useNavigate();
+
+  const loadFromLocalStorage = (form, storageKey) => {
+    const savedData = localStorage.getItem(storageKey);
+    if (savedData) {
+      form.setValues(JSON.parse(savedData));
+    }
+  };
+
+  const saveToLocalStorage = (form, storageKey) => {
+    localStorage.setItem(storageKey, JSON.stringify(form.values));
+  };
+
   const founderDataForm = useFormik({
     initialValues: {
       fullName: "",
@@ -28,10 +41,14 @@ function ApplicationForm1() {
     },
     onSubmit: (values) => {
       console.log(values);
+      saveToLocalStorage(founderDataForm, "founderData");
     },
   });
+
+  console.log('h')
+
   const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  backToTop()
+  backToTop();
 
   const startupDataForm = useFormik({
     initialValues: {
@@ -53,9 +70,14 @@ function ApplicationForm1() {
       techOptions: [],
     },
     onSubmit: (values) => {
-      console.log(values);
+      saveToLocalStorage(startupDataForm, "startupData");
     },
   });
+
+  useEffect(() => {
+    loadFromLocalStorage(founderDataForm, "founderData");
+    loadFromLocalStorage(startupDataForm, "startupData");
+  }, []);
 
   return (
     <SideBar>
@@ -519,6 +541,12 @@ function ApplicationForm1() {
               w={{
                 base: "100%",
                 md: "20%",
+              }}
+              onClick={() => {
+                founderDataForm.handleSubmit();
+                startupDataForm.handleSubmit();
+                saveToLocalStorage(founderDataForm, "founderData");
+                saveToLocalStorage(startupDataForm, "startupData");
               }}
             />
             <GreenButton

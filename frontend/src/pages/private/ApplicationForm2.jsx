@@ -8,8 +8,21 @@ import FormTextField from "../../components/fields/FormTextField";
 import CheckBoxGroupField from "../../components/fields/CheckBoxGroupField";
 import GreenOutlinedButton from "../../components/buttons/GreenOutlinedButton";
 import GreenButton from "../../components/buttons/GreenButton";
+import { useEffect } from "react";
 
 function ApplicationForm2({ref}) {
+
+  const loadFromLocalStorage = (form, storageKey) => {
+    const savedData = localStorage.getItem(storageKey);
+    if (savedData) {
+      form.setValues(JSON.parse(savedData));
+    }
+  };
+
+  const saveToLocalStorage = (form, storageKey) => {
+    localStorage.setItem(storageKey, JSON.stringify(form.values));
+  };
+
   const startupSpecificData = useFormik({
     initialValues: {
       oneLineSummary: "",
@@ -56,7 +69,15 @@ function ApplicationForm2({ref}) {
       haveYouParticipatedWithThisProjectInAnyCompetitionOrincubationProgramBefore:
         "",
     },
+    onSubmit: (values) => {
+      console.log(values);
+      saveToLocalStorage(startupSpecificData, "startupSpecificData");
+    },
   });
+
+  useEffect(() => {
+    loadFromLocalStorage(startupSpecificData, "startupSpecificData");
+  }, []);
   const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   backToTop()
   return (
@@ -880,6 +901,10 @@ function ApplicationForm2({ref}) {
               base: "100%",
               md: "20%",
             }}
+            onClick={() => {
+              startupSpecificData.handleSubmit();
+              saveToLocalStorage(startupSpecificData, "startupSpecificData");
+            }}
           />
           <GreenButton
             w={{
@@ -887,7 +912,10 @@ function ApplicationForm2({ref}) {
               md: "20%",
             }}
             label={"Submit"}
-            onClick={() => {}}
+            onClick={() => {
+              startupSpecificData.handleSubmit();
+              saveToLocalStorage(startupSpecificData, "startupSpecificData");
+            }}
           />
         </Stack>
       </Stack>
