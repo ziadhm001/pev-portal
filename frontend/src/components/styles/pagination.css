@@ -1,0 +1,33 @@
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    color:#667085;
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .active {
+    background-color: #1e50ff;
+    border-radius: 50%;
+  }
+  
+  .page-item {
+    list-style: none;
+    padding: 2px 12px;
+    height: 31.5px;
+    width: 31.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+  }
+
+  .selected{
+    color:#4BB543
+  }
