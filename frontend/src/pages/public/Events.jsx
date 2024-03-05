@@ -1,13 +1,11 @@
 import { Text, Flex } from "@chakra-ui/react";
 import DefaultLayout from "../../layouts/DefaultLayout";
 import RegisterEvents from "../../components/sections/RegisterEvents";
-import InfoSession from "../../components/sections/InfoSession";
-import WhoShouldAttend from "../../components/sections/WhoShouldAttend";
-import ApplyBanner from "../../components/sections/ApplyBanner";
+
 export default function Events() {
   return (
     <DefaultLayout>
-      <Flex direction={"column"} w={"60%"} mx={"auto"}>
+      <Flex direction={"column"} w={"60%"} mx={"auto"} mb={2}>
         <Flex
           h="50vh"
           w={"100%"}
@@ -30,11 +28,6 @@ export default function Events() {
           </Text>
         </Flex>
         <RegisterEvents />
-      </Flex>
-      <InfoSession />
-      <Flex direction={"column"} w={"60%"} mx={"auto"} my={10}>
-        <WhoShouldAttend />
-        <ApplyBanner />
       </Flex>
     </DefaultLayout>
   );

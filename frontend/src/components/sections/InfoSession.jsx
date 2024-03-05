@@ -4,10 +4,9 @@ export default function InfoSession() {
     <div
       style={{
         backgroundColor: "#ECECEC",
-        marginTop: "100px",
       }}
     >
-      <Flex w={"60%"} justifyContent={"space-between"} mx={"auto"} py={"10vh"}>
+      <Flex w={"60%"} justifyContent={"space-between"} mx={"auto"} py={"11vh"}>
         <div
           style={{
             width: "60%",

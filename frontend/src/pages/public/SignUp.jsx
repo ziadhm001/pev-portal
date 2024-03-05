@@ -10,7 +10,7 @@ import authService from "../../services/auth.service";
 
 function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
-  const [error, setError] = React.useState('')
+  const [error, setError] = React.useState("");
   const navigate = useNavigate();
   const registerFormik = useFormik({
     initialValues: {
@@ -20,9 +20,17 @@ function SignUp() {
       password: "",
     },
     onSubmit: (values) => {
-      authService.register(values.firstName, values.lastName, values.email, values.password).then(() => navigate('/')).catch(err => {
-        setError(err.response.data.error.msg)
-      })
+      authService
+        .register(
+          values.firstName,
+          values.lastName,
+          values.email,
+          values.password
+        )
+        .then(() => navigate("/"))
+        .catch((err) => {
+          setError(err.response.data.error.msg);
+        });
     },
   });
   return (
@@ -93,8 +101,17 @@ function SignUp() {
                 touched={registerFormik.touched.password}
                 helperText={"Password must be at least 8 characters"}
               />
-              <Button bg="brand.300" color={"white"} size="lg" type="submit" onClick={registerFormik.handleSubmit}>
+              <Button
+                bg="brand.300"
+                color={"white"}
+                size="lg"
+                type="submit"
+                onClick={registerFormik.handleSubmit}
+              >
                 Continue
+              </Button>
+              <Button size="lg" variant={"outline"}>
+                Continue with Google
               </Button>
             </Stack>
           </Container>

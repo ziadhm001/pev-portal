@@ -11,6 +11,13 @@ import {
 import logo1 from "../../assets/images/logo1.png";
 import FormTextField from "../fields/FormTextField";
 import { useFormik } from "formik";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaTwitter,
+  FaLinkedin,
+} from "react-icons/fa";
 
 const ListHeader = ({ children }) => {
   return (
@@ -133,6 +140,17 @@ function Footer() {
                   Subscribe
                 </Button>
               </Stack>
+            </Stack>
+            <Stack align={"flex-start"} p={8}>
+              <ListHeader>Follow Us</ListHeader>
+
+              <Flex gap={4} w={"100%"}>
+                <FaFacebookF />
+                <FaInstagram />
+                <FaYoutube />
+                <FaTwitter />
+                <FaLinkedin />
+              </Flex>
             </Stack>
           </GridItem>
         </Grid>

@@ -5,7 +5,7 @@ import GreenButton from "../buttons/GreenButton";
 
 function PEVAcceleraProgarm() {
   return (
-    <Flex bg={"#ECECEC"} padding={"60px"} justifyContent={"space-evenly"}>
+    <Flex bg={"#ECECEC"} padding={"60px 0px"} justifyContent={"space-evenly"}>
       <Flex flexDirection={"column"} margin={"50px 0"}>
         <Text color={"#4BB543"} as={"b"} fontSize={"80px"} w={"700px"}>
           PEV Accelera Program

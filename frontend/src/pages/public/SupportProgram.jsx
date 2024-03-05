@@ -15,7 +15,6 @@ export default function SupportProgram() {
       <PrimeProgram />
       <PrimeNetwork />
       <TrackRecord />
-      <FAQ />
       <ApplyBanner />
     </DefaultLayout>
   );

@@ -22,6 +22,8 @@ import JobPage from "./pages/public/JobPage";
 import BlogsPage from "./pages/public/BlogsPage";
 import ContactUs from "./pages/public/ContactUs";
 import AboutUs from "./pages/public/AboutUs";
+import EventDetails from "./pages/public/EventDetails";
+import TermsAndConditions from "./pages/public/TermsAndConditions";
 function App() {
   return (
     <React.Fragment>
@@ -34,6 +36,7 @@ function App() {
           <Route path="/post-program-support" element={<SupportProgram />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/event-details" element={<EventDetails />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/job" element={<JobPage />} />
@@ -59,6 +62,10 @@ function App() {
           />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
         </Routes>
       </Router>
     </React.Fragment>
