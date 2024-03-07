@@ -6,10 +6,14 @@ import Splitter from "../../components/sections/Splitter";
 import CompaniesContainer from "../../components/sections/CompaniesContainer";
 import ApplyBanner from "../../components/sections/ApplyBanner";
 import GlobalNetwork from "../../components/sections/GlobalNetwork";
+import ProgramHero from "../../components/sections/ProgramHero";
+import { useState } from "react";
 
 function ProgramPage() {
+  const [inView, setInView] = useState(false);
   return (
-    <DefaultLayout>
+    <DefaultLayout transparencyPercentage={inView}>
+      <ProgramHero setInView={setInView} />
       <WhatHow />
       <Direction />
       <QuoteCardContainer />
