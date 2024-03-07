@@ -4,8 +4,8 @@ import { useFormik } from "formik";
 import FormPasswordField from "../../components/fields/FormPasswordField";
 import React from "react";
 import RegisterationLayout from "../../layouts/RegisterationLayout";
-import { Link, useNavigate } from "react-router-dom";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
 
 function SignUp() {

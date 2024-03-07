@@ -1,8 +1,21 @@
-import { Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Grid,
+  GridItem,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalOverlay,
+  Text,
+} from "@chakra-ui/react";
 import girlImage from "../../assets/images/BG.png";
 import GreenButton from "../buttons/GreenButton";
+import { useState } from "react";
+import FormTextField from "../fields/FormTextField";
 
 export default function RegisterEvents() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Flex w={"100%"} direction={"column"}>
       <Flex
@@ -42,6 +55,7 @@ export default function RegisterEvents() {
             mt={"20px"}
             borderRadius={"15"}
             fontSize={24}
+            onClick={() => setIsModalOpen(true)}
           >
             Register For An Event
           </Button>
@@ -55,20 +69,42 @@ export default function RegisterEvents() {
         gap={"30px"}
       >
         <GridItem>
-          <NormalEventCard />
+          <NormalEventCard onRegister={() => setIsModalOpen(true)} />
         </GridItem>
         <GridItem>
-          <NormalEventCard />
+          <NormalEventCard onRegister={() => setIsModalOpen(true)} />
         </GridItem>
         <GridItem>
-          <NormalEventCard />
+          <NormalEventCard onRegister={() => setIsModalOpen(true)} />
         </GridItem>
       </Grid>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        size={"xl"}
+      >
+        <ModalOverlay />
+        <ModalContent rounded={"xl"} p="30px">
+          <ModalBody>
+            <Text fontSize={"48px"} fontWeight={"600"} mt={4}>
+              Register for the Event
+            </Text>
+            <Text mb={4} fontSize={"20px"} color={"#667085"}>
+              Please enter your credentials carefully.
+            </Text>
+            <FormTextField label={"Name"} />
+            <FormTextField label={"Email"} />
+            <FormTextField label={"Phonenumber"} />
+            <FormTextField label={"Date"} />
+            <GreenButton label={"Send Message"} w="100%" mt="20px" mb="30px" />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Flex>
   );
 }
 
-function NormalEventCard() {
+function NormalEventCard({ onRegister }) {
   return (
     <Flex
       boxShadow={"0px 0px 20px 0px #0000004D"}
@@ -106,6 +142,7 @@ function NormalEventCard() {
         mt={"20px"}
         borderRadius={"15"}
         fontSize={24}
+        onClick={onRegister}
       >
         Register For An Event
       </Button>

@@ -5,8 +5,8 @@ import { useFormik } from "formik";
 import FormPasswordField from "../../components/fields/FormPasswordField";
 import React from "react";
 import RegisterationLayout from "../../layouts/RegisterationLayout";
-import { Link } from "react-router-dom";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import { Link } from "react-router-dom";
 import authService from "../../services/auth.service";
 
 function Login() {
@@ -72,6 +72,10 @@ function Login() {
                 touched={registerFormik.touched.password}
                 helperText={"Password must be at least 8 characters"}
               />
+              <Text fontSize="14px" color={"#667085"}>
+                Forgot your password ?{" "}
+                <Link to="/forgot-password">Reset password</Link>
+              </Text>
               <Button
                 bg="brand.300"
                 color={"white"}

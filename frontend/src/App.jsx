@@ -24,6 +24,7 @@ import ContactUs from "./pages/public/ContactUs";
 import AboutUs from "./pages/public/AboutUs";
 import EventDetails from "./pages/public/EventDetails";
 import TermsAndConditions from "./pages/public/TermsAndConditions";
+import ForgotPassword from "./pages/public/ForgotPassword";
 function App() {
   return (
     <React.Fragment>
@@ -50,6 +51,7 @@ function App() {
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/user/profile" element={<AddEditProfile />} />
           <Route path="/user/application-form" element={<ApplicationForm />} />
           <Route
