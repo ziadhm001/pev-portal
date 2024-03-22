@@ -8,6 +8,7 @@ function ContactUsLayout({ children }) {
       minH={"100svh"}
       direction={{ base: "column", md: "row" }}
       spacing={0}
+      paddingTop={{ base: "50px", md: "0" }}
     >
       <Flex display={{ base: "none", md: "flex" }} w={{ base: "0", md: "50%" }}>
         <Flex
@@ -48,6 +49,7 @@ function ContactUsLayout({ children }) {
             position={"relative"}
             top={"50px"}
             left={"-80px"}
+            margin={"30px"}
           />
           <Stack spacing={4} zIndex={1} position={"relative"} top={"-80px"}>
             <Text
@@ -100,7 +102,6 @@ function ContactUsLayout({ children }) {
         bg={"rgba(255,255,255,1)"}
         justifyContent={"space-between"}
         m={0}
-        h={"100vh"}
         position={"relative"}
         top={"80px"}
       >
