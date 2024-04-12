@@ -3,6 +3,8 @@ import DefaultLayout from "../../layouts/DefaultLayout";
 import RegisterEvents from "../../components/sections/RegisterEvents";
 
 export default function Events() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <Flex direction={"column"} w={"60%"} mx={"auto"} mb={2}>

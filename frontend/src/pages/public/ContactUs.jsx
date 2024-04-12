@@ -20,7 +20,8 @@ function ContactUs() {
       console.log(values);
     },
   });
-
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <ContactUsLayout>
@@ -35,7 +36,7 @@ function ContactUs() {
           top={"-64px"}
         >
           <Stack spacing={4} color={"brand.500"}>
-            <Text fontSize="14px" color={"#667085"}>
+            <Text fontSize="14px" color={"#667085"} mt={12}>
               Please fill out the form and we will get back to you as soon as
               possible.
             </Text>

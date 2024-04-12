@@ -35,40 +35,27 @@ function Direction() {
         >
           <Image src={trend} marginBottom={"20px"} />
           <Text fontSize={"24px"} color={"#4BB543"} as="b">
-            PEV Accelera Program
+          Ideation and Planning Support
           </Text>
           <Text fontStyle={"italic"} as="b">
-            It all starts with our renowned Founder Institute 'Core Program',
-            which combines aggressive growth sprints and constant feedback to
-            help idea and pre-seed founders reach the milestones needed for
-            investment and sustained growth.
+          Embarking on the journey from idea to success requires careful planning and validation. At PEV, we provide startups with the essential support they need to validate their business models and develop robust growth plans.
           </Text>
           <Flex marginTop={"20px"}>
             <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
             <Text color={"#667085"}>
-              Make years of progress in just a few months through our proven,
-              business-building Growth Sprints. No theoretical 'homework' here.
+            Validation of Business Modeling and due diligence
             </Text>
           </Flex>
           <Flex marginTop={"20px"}>
             <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
             <Text color={"#667085"}>
-              Get the push and accountability you need through weekly ratings,
-              360 degree reviews, and aggressive milestones.
+            Crafting Detailed Business Plans
             </Text>
           </Flex>
           <Flex marginTop={"20px"}>
             <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
             <Text color={"#667085"}>
-              Receive constant feedback and advice from experts through our live
-              Weekly Feedback Sessions, Office Hours, and Working Groups.
-            </Text>
-          </Flex>
-          <Flex marginTop={"20px"}>
-            <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
-            <Text color={"#667085"}>
-              Expand your network and connect with entrepreneurs, advisors, and
-              investors - both locally, and globally.
+            Identifying Market Opportunities
             </Text>
           </Flex>
         </Flex>
@@ -98,40 +85,27 @@ function Direction() {
         >
           <Image src={trend} marginBottom={"20px"} />
           <Text fontSize={"24px"} color={"#4BB543"} as="b">
-            PEV Venture network
+            Execution and Growth Strategies
           </Text>
           <Text fontStyle={"italic"} as="b">
-            When ready, Alumni can get featured on events and have their deals
-            syndicated to a diverse pool of investors in the FI Venture Network
-            - an exclusive network of investors actively funding pre-seed and
-            seed-stage startups before anyone else.
+          Executing growth strategies effectively is key to startup success. PEV offers startups the resources, tools, and expertise to execute their plans with precision and drive sustainable growth.
           </Text>
           <Flex marginTop={"20px"}>
             <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
             <Text color={"#667085"}>
-              Get access to angels, accelerators, micro-funds, and syndicates
-              that actually invest in startups at the earliest stages.
+            Financial Statement Synchronization
             </Text>
           </Flex>
           <Flex marginTop={"20px"}>
             <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
             <Text color={"#667085"}>
-              Pitch on FI Demo Days and the Founder Showcase, as well as partner
-              pitch competitions and conferences.
+            Full-Scale Marketing Campaigns
             </Text>
           </Flex>
           <Flex marginTop={"20px"}>
             <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
             <Text color={"#667085"}>
-              Pitch on FI Demo Days and the Founder Showcase, as well as partner
-              pitch competitions and conferences.
-            </Text>
-          </Flex>
-          <Flex marginTop={"20px"}>
-            <Image src={check} marginRight={"10px"} alignSelf={"flex-start"} />
-            <Text color={"#667085"}>
-              Share advice and see private ratings and reviews of investors
-              across the globe (coming in 2024).
+            Scaling Business Regionally and Globally
             </Text>
           </Flex>
         </Flex>

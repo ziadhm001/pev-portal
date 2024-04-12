@@ -28,7 +28,8 @@ function FormPasswordField({
   const isInvalid = isError && isTouched;
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel fontWeight={600}>{label}</FormLabel>
+      <FormHelperText color="gray">{!error && helperText}</FormHelperText>
       <InputGroup>
         <Input
           border={"1px solid"}
@@ -48,7 +49,6 @@ function FormPasswordField({
           </Button>
         </InputRightElement>
       </InputGroup>
-      <FormHelperText>{!error && helperText}</FormHelperText>
       <FormErrorMessage>{isInvalid && error}</FormErrorMessage>
     </FormControl>
   );

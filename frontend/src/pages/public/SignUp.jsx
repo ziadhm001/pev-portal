@@ -115,7 +115,7 @@ function SignUp() {
               </Button>
             </Stack>
           </Container>
-          <Stack spacing={4} align="center" textAlign="center">
+          <Stack spacing={4} mb={12} align="center" textAlign="center">
             <Text fontSize="14px" color={"#667085"}>
               {"  Already have an account? "} {"  "}
               <Link

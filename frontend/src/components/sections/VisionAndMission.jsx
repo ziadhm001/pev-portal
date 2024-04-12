@@ -10,9 +10,7 @@ function VisionAndMission() {
           </Text>
           <Flex bg={"white"} p={4} borderRadius={8} w={"100%"}>
             <Text fontSize="18px" color={"black"}>
-              “is that there are talented people everywhere whose potential can
-              be unlocked to make an impact on the world through
-              entrepreneurship.”
+            To be the leading catalyst for transformative entrepreneurship, driving sustainable development and shaping the future of the global startup landscape
             </Text>
           </Flex>
         </Stack>
@@ -22,9 +20,7 @@ function VisionAndMission() {
           </Text>
           <Flex bg={"white"} p={4} borderRadius={8} w={"100%"}>
             <Text fontSize="18px" color={"black"}>
-              “is to empower talented and motivated people to build technology
-              businesses that positively impact the world, no matter their
-              location, race, gender, or sexual orientation.”
+            At PEV, our mission is to empower visionary entrepreneurs across the MENA region and beyond, providing them with the essential tools, mentorship, and resources needed to transform innovative ideas into high-impact businesses. We are committed to fostering a vibrant ecosystem that nurtures genuine development, bridging the gap between entrepreneurs and the elements crucial for success. Our focus extends beyond mere investment, as we strive to cultivate a community where entrepreneurship thrives, driving societal transformation and economic progress on a global scale.
             </Text>
           </Flex>
         </Stack>

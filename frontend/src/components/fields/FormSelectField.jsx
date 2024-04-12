@@ -24,7 +24,7 @@ function FormSelectField({
   const isInvalid = isError && isTouched;
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel fontWeight={600}>{label}</FormLabel>
       <Select
         border={"1px solid"}
         value={value}

@@ -1,6 +1,8 @@
 import DefaultLayout from "../../layouts/DefaultLayout";
 import { Flex, Select, Text } from "@chakra-ui/react";
 export default function Careers() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <Flex

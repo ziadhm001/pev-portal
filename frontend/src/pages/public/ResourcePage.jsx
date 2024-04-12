@@ -6,6 +6,8 @@ import manImage from "../../assets/images/man.png";
 import dots from "../../assets/images/dots.png";
 
 function ResourcePage() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <Flex

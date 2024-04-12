@@ -4,6 +4,8 @@ import company from "../../assets/images/company.png";
 import PartnerCard from "../../components/cards/PartnerCard";
 
 function Partner() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <Flex flexDirection={"column"} alignItems={"center"} padding={"50px"}>

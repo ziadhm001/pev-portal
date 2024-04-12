@@ -25,6 +25,8 @@ function BlogsPage() {
     );
     setItemOffset(newOffset);
   };
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <Flex

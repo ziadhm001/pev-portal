@@ -23,7 +23,8 @@ function CheckBoxGroupField({
   const isInvalid = isError && isTouched;
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel fontWeight={600}>{label}</FormLabel>
+      <FormHelperText color="gray">{!error && helperText}</FormHelperText> 
       <CheckboxGroup
         value={values}
         onChange={(str) => {
@@ -38,7 +39,6 @@ function CheckBoxGroupField({
           ))}
         </Stack>
       </CheckboxGroup>
-      <FormHelperText>{!error && helperText}</FormHelperText>
       <FormErrorMessage>{isInvalid && error}</FormErrorMessage>
     </FormControl>
   );

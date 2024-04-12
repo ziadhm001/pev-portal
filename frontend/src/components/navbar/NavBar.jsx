@@ -73,7 +73,7 @@ export default function NavBar({transparency}) {
           <Image
             src={logo1}
             alt={"logo"}
-            h={"60px"}
+            h={"80px"}
             objectFit={"cover"}
             transform={"scale(2)"}
             left={{ base: "-30", md: "0" }}
@@ -182,7 +182,7 @@ const DesktopNav = () => {
   const linkHoverColor = "brand.300";
 
   return (
-    <Stack direction={"row"} spacing={4} align={"center"}>
+    <Stack direction={"row"} spacing={8} align={"center"}>
       {NAV_ITEMS.map((navItem) =>
         navItem?.type == "dropdown" ? (
           <DropdownNavItem
@@ -195,9 +195,10 @@ const DesktopNav = () => {
             <Link to={navItem.href}>
               <Box
                 key={navItem.label}
-                p={5}
+                py={3}
                 color={linkColor}
                 _hover={{ color: linkHoverColor }}
+                fontSize={14}
               >
                 {navItem.label}
               </Box>
@@ -284,7 +285,7 @@ const DropdownNavItem = ({ label, items }) => {
   const navigate = useNavigate();
   return (
     <Menu>
-      <MenuButton>{label}</MenuButton>
+      <MenuButton fontSize={14}>{label}</MenuButton>
       <MenuList>
         {items?.map((item) => (
           <MenuItem
@@ -292,6 +293,7 @@ const DropdownNavItem = ({ label, items }) => {
               color: "black",
             }}
             key={item.label}
+            fontSize={14}
             onClick={() => navigate(item.href)}
           >
             {item.label}
@@ -303,6 +305,14 @@ const DropdownNavItem = ({ label, items }) => {
 };
 
 const NAV_ITEMS = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "About Us",
+    href: "/about-us",
+  },
   {
     label: "Programs",
     href: "/programs",
@@ -323,24 +333,43 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Partners",
-    href: "/partner",
+    label: "Resources",
+    href: "/resources",
+    type: "dropdown",
+    children: [
+      {
+        label: "Startups Academy",
+        href: "/resources",
+      },
+      {
+        label: "Startups Resources Data",
+        href: "/resources-list",
+      },
+      {
+        label: "Investors Resources Data",
+        href: "/resource",
+      },
+    ],
   },
   {
-    label: "Careers",
-    href: "/careers",
+    label: "Blogs",
+    href: "/blogs",
+  },
+  {
+    label: "Partners",
+    href: "/partner",
   },
   {
     label: "Events",
     href: "/events"
   },
   {
-    label: "Support",
-    href: "/support",
+    label: "Careers",
+    href: "/careers",
   },
   {
-    label: "About Us",
-    href: "/about-us",
+    label: "Support",
+    href: "/support",
   },
   {
     label: "Contact Us",

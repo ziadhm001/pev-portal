@@ -29,6 +29,7 @@ export default function ProgramHero({ setInView }) {
       ref={ref}
     >
       <Text
+        mt={36}
         fontSize={"48px"}
         fontWeight={"700"}
         sx={{
@@ -40,11 +41,9 @@ export default function ProgramHero({ setInView }) {
       >
         A Proven Methodology
       </Text>
-      <Text w={"30%"} fontSize={"20px"} textColor={"white"}>
-        Since 2009, the Founder Institute's highly-structured accelerator
-        programs, innovative 'Equity Collective', and global network of advisors
-        have been proven to significantly increase a startup's chances of
-        success - across 100+ countries and in any economic environment.
+      <Text w={"50%"} fontSize={"20px"} textColor={"white"}>
+      A New Era of Business Eco-systems 
+PEV spearheads an energetic business environment, providing startups with more than mere financial support. By means of personalized guidance, connections to regional and international industry professionals, and calculated investment, PEV enables startups to traverse markets with assurance. This atmosphere cultivates authentic growth, restructuring sectors and propelling societal change.
       </Text>
       <Box
         display={"flex"}

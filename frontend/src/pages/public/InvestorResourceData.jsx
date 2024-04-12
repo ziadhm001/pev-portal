@@ -2,6 +2,8 @@ import { Flex, Text, Link } from "@chakra-ui/react";
 import DefaultLayout from "../../layouts/DefaultLayout";
 
 function InvestorResourceData() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <Flex

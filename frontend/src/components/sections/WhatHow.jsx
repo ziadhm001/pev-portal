@@ -29,9 +29,7 @@ function WhatHow() {
             Problem We Face
           </Text>
           <Text color={"#667085"}>
-            One of the biggest challenges entrepreneurs face is knowing what to
-            focus on, and when - especially if you want to raise funding.
-            Meanwhile, every minute you waste brings you closer
+            Startups face a multitude of challenges, from securing funding and attracting talent to navigating market uncertainties and fierce competition. Operational inefficiencies, scalability issues, and regulatory complexities further compound their journey.
           </Text>
         </Flex>
         <Image
@@ -57,9 +55,7 @@ function WhatHow() {
             Program Solution
           </Text>
           <Text color={"#667085"}>
-            One of the biggest challenges entrepreneurs face is knowing what to
-            focus on, and when - especially if you want to raise funding.
-            Meanwhile, every minute you waste brings you closer
+          The Accelera program we offer presents a remarkable framework, simplifying the process of building startups. Enhanced by perspectives from a worldwide network of advisors, we deliver thorough assistance at each phase of development.
           </Text>
         </Flex>
       </Flex>

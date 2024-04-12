@@ -5,6 +5,8 @@ import ApplyBanner from "../../components/sections/ApplyBanner";
 import { Text, Flex } from "@chakra-ui/react";
 
 export default function EventDetails() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <InfoSession />

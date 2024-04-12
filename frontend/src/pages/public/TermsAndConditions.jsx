@@ -2,6 +2,8 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import DefaultLayout from "../../layouts/DefaultLayout";
 
 export default function TermsAndConditions() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <Box

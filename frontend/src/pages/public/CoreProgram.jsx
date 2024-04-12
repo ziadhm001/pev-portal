@@ -8,6 +8,8 @@ import Funds from "../../components/sections/Fund";
 import TimeIsNow from "../../components/sections/TimeIsNow";
 
 export default function CoreProgram() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <PEVAcceleraProgarm />

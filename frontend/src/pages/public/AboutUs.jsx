@@ -6,6 +6,8 @@ import BackgroundAndThesis from "../../components/sections/BackgroundAndThesis";
 import VisionAndMission from "../../components/sections/VisionAndMission";
 import MeetOurTeam from "../../components/sections/MeetOurTeam";
 function AboutUs() {
+  const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop()
   return (
     <DefaultLayout>
       <br />
@@ -26,10 +28,7 @@ function AboutUs() {
         </Text>
         <Container p={5} textAlign={"center"}>
           <Text fontSize="14px" color={"#667085"}>
-            PEV strengthens the global startup community by connecting
-            innovative entrepreneurs creating high-growth, high-impact
-            businesses with the knowledge, network, and funding they need to
-            succeed.
+            Welcome to PEV, the pioneering VC in the MENA region, guiding startups from concept to success. We go beyond traditional investment, creating an ecosystem that nurtures genuine development. At PEV, we connect innovative entrepreneurs with the knowledge, network, and funding needed for high-impact businesses. Join us in shaping the future of the global startup community – where ideas become reality and success stories unfold.
           </Text>
         </Container>
       </Flex>
@@ -53,28 +52,13 @@ function AboutUs() {
           <Container maxW={"container.lg"}>
             <Stack spacing={6} p={8} alignItems={"start"} fontWeight={"500"}>
               <Text fontSize="32px" textAlign={"center"}>
-                “People now recognise that having a good performance
-                conversation means that something happens as a result.”
+                “At PEV, we recognize that the journey from concept to success requires more than just funding. We are dedicated to providing startups with the essential tools, support, and resources they need to flourish”
               </Text>
               <Text fontSize="14px">
-                “It is imperative to proactively foster the collaborations and
-                partnerships that will bring together the capital, knowledge,
-                and network these entrepreneurs require to succeed – and to
-                provide every entrepreneur with equal access to opportunity.”
+                “What sets PEV apart is our focus on strengthening the global startup community. We bridge the gap between innovative entrepreneurs and the key elements for success. By connecting visionaries with the right mentors, industry experts, and investors, we catalyze the growth of high-impact businesses that redefine industries and ensure real impact.”
               </Text>
             </Stack>
           </Container>
-        </Flex>
-        <Flex p={"50px"}>
-          <ReactPlayer
-            w={"300px"}
-            height={"300px"}
-            url="https://www.youtube.com/watch?v=lNdOtlpmH5U&ab_channel=AliAbdaal"
-            controls={true}
-            style={{
-              borderRadius: "20px",
-            }}
-          />
         </Flex>
       </Stack>
       <Stack
@@ -144,7 +128,7 @@ function AboutUs() {
           <Stack spacing={4} align={"center"}>
             <Text fontSize="48px" fontWeight="700" color="#4BB543">
               Join 4,000+ startups already growing
-            </Text>
+            </Text>To be the leading catalyst for transformative entrepreneurship, driving sustainable development and shaping the future of the global startup landscape
           </Stack>
           <Grid
             templateColumns={{

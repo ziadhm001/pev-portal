@@ -17,10 +17,7 @@ function BackgroundAndThesis() {
           Background
         </Text>
         <Text>
-          PEV was founded in 2024 with the mission to build up Africa’s start-up
-          community. We have grown organically over the years into what is now
-          the leading community working towards building high-growth,
-          high-impact companies globally with the ambition to transform society.
+        Established in 2024, PEV has embarked on a mission to cultivate and elevate Egypt and the MENA region's burgeoning startup community. Over the years, we have experienced organic growth, evolving into the foremost community dedicated to fostering high-growth, high-impact companies on a global scale. Our unwavering ambition is to drive societal transformation through innovative entrepreneurship.
         </Text>
       </Stack>
       <Stack
@@ -37,17 +34,10 @@ function BackgroundAndThesis() {
           Our Thesis
         </Text>
         <Text>
-          At PEV, we believe entrepreneurship is a key driver for development.
-          Specifically, high-growth, high-potential ventures working to develop
-          important innovations and disruptive new business models are uniquely
-          able to capture sustainable economic growth.
+        Within the philosophy of PEV, we assert that entrepreneurship plays a pivotal role in driving development. In particular, ventures characterized by high growth and significant potential, focused on pioneering innovations and disruptive business models, possess a distinctive capacity to foster sustainable economic progress.
         </Text>
         <Text>
-          These ventures builds strong communities, representing a significant
-          source of employment and a reliable income stream for future
-          generations. The entrepreneurs PEV exists to support contribute up to
-          two-thirds of national GDP and provide the foundation for a stable
-          middle class.
+        These ventures contribute to the establishment of robust communities, serving as substantial sources of employment and reliable income streams for future generations. The entrepreneurs supported by PEV make substantial contributions, accounting for up to two-thirds of the national GDP and laying the groundwork for a stable middle class.
         </Text>
       </Stack>
       <GradientLine zIndex={10} />
