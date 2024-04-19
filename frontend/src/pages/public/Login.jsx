@@ -5,14 +5,14 @@ import { useFormik } from "formik";
 import FormPasswordField from "../../components/fields/FormPasswordField";
 import React from "react";
 import RegisterationLayout from "../../layouts/RegisterationLayout";
-import { Link } from "react-router-dom";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import { Link } from "react-router-dom";
 import authService from "../../services/auth.service";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
-  const [isLoading, setIsLoading] = React.useState(false)
-  const [error, setError] = React.useState('');
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
   const navigate = useNavigate();
   const registerFormik = useFormik({
     initialValues: {
@@ -20,11 +20,14 @@ function Login() {
       password: "",
     },
     onSubmit: (values) => {
-      setIsLoading(true)
-      authService.login(values.email, values.password).then(() => navigate('/')).catch(err => {
-        setError(err.response.data.error)
-      })
-      setIsLoading(false)
+      setIsLoading(true);
+      authService
+        .login(values.email, values.password)
+        .then(() => navigate("/"))
+        .catch((err) => {
+          setError(err.response.data.error?.msg ?? err.message);
+        });
+      setIsLoading(false);
     },
   });
   return (
@@ -45,7 +48,7 @@ function Login() {
                 Please Enter your credentials carefully to access your account
               </Text>
               <Text fontSize="14px" color={"red"}>
-              {error}
+                {error}
               </Text>
               <FormTextField
                 label={"Email"}
@@ -69,7 +72,19 @@ function Login() {
                 touched={registerFormik.touched.password}
                 helperText={"Password must be at least 8 characters"}
               />
-              <Button bg="brand.300" color={"white"} size="lg" type="submit" onClick={registerFormik.handleSubmit} isLoading={isLoading} loadingText="Loading...">
+              <Text fontSize="14px" color={"#667085"}>
+                Forgot your password ?{" "}
+                <Link to="/forgot-password">Reset password</Link>
+              </Text>
+              <Button
+                bg="brand.300"
+                color={"white"}
+                size="lg"
+                type="submit"
+                onClick={registerFormik.handleSubmit}
+                isLoading={isLoading}
+                loadingText="Loading..."
+              >
                 Continue
               </Button>
             </Stack>

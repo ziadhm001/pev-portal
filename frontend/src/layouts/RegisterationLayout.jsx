@@ -8,6 +8,8 @@ function RegisterationLayout({ children }) {
       minH={"100svh"}
       direction={{ base: "column", md: "row" }}
       spacing={0}
+      paddingTop={{ base: "50px", md: "0" }}
+      marginBottom={"50px"}
     >
       <Flex display={{ base: "none", md: "flex" }} w={{ base: "0", md: "50%" }}>
         <Flex
@@ -89,7 +91,6 @@ function RegisterationLayout({ children }) {
         bg={"rgba(255,255,255,1)"}
         justifyContent={"space-between"}
         m={0}
-        h={"100vh"}
         position={"relative"}
         top={"80px"}
       >

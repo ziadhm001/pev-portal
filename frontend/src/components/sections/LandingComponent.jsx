@@ -26,8 +26,9 @@ function LandingComponent({ onClick }) {
           color={"white"}
           position={"relative"}
         >
-          <Stack spacing={10} align={"center"} textAlign={"center"}>
+          <Stack spacing={4} align={"center"} textAlign={"center"}>
             <Text
+              mt={24}
               fontSize="102px"
               fontWeight="500"
               fontFamily={"catchye"}
@@ -45,7 +46,7 @@ function LandingComponent({ onClick }) {
                 size="lg"
                 onClick={() => {
                   if(user)
-                    navigate("/user/profile");
+                    navigate("/user/application-form");
                   else
                     navigate("/login")
                 }}

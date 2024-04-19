@@ -17,6 +17,20 @@ class AuthService {
       });
   }
 
+  forgetPassword(email) {
+    return api
+      .post("/auth/request-password-reset", {
+        email,
+      })
+      .then(response => {
+        if (response.data.token) {
+          TokenService.setUser(response.data);
+        }
+
+        return response.data;
+      });
+  }
+
   logout() {
     TokenService.removeUser();
   }

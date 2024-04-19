@@ -25,12 +25,12 @@ import logo1 from "../../assets/images/logo1.png";
 import { FiChevronDown } from "react-icons/fi";
 import authService from "../../services/auth.service";
 
-export default function NavBar() {
+export default function NavBar({transparency}) {
   const { isOpen, onToggle } = useDisclosure();
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user'))
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  const username = user ? user.user.firstName + " " + user.user.lastName : null
+  const username = user ? user.user.firstName + " " + user.user.lastName : null;
   return (
     <Box
       position={"fixed"}
@@ -40,7 +40,7 @@ export default function NavBar() {
       m={0}
     >
       <Flex
-        bg={"brand.400"}
+        bg={transparency ? "transparent" : "brand.400"}
         color={"white"}
         minH={"60px"}
         py={{ base: 2 }}
@@ -73,7 +73,7 @@ export default function NavBar() {
           <Image
             src={logo1}
             alt={"logo"}
-            h={"60px"}
+            h={"80px"}
             objectFit={"cover"}
             transform={"scale(2)"}
             left={{ base: "-30", md: "0" }}
@@ -91,11 +91,8 @@ export default function NavBar() {
             <DesktopNav />
           </Flex>
         </Flex>
-        <Stack justify={"flex-end"} direction={"row"} spacing={6}>
-          
-        </Stack>
-        {
-          user ? 
+        <Stack justify={"flex-end"} direction={"row"} spacing={6}></Stack>
+        {user ? (
           <Menu>
             <MenuButton
               py={2}
@@ -103,9 +100,7 @@ export default function NavBar() {
               _focus={{ boxShadow: "none" }}
             >
               <HStack>
-                <Avatar
-                  size={"sm"}
-                />
+                <Avatar size={"sm"} />
                 <VStack
                   display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
@@ -123,41 +118,56 @@ export default function NavBar() {
               bg={useColorModeValue("white", "gray.900")}
               borderColor={useColorModeValue("gray.200", "gray.700")}
             >
-              <MenuItem onClick={() => {navigate('/user/profile')}} style={{color: 'black'}}>Profile</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/user/profile");
+                }}
+                style={{ color: "black" }}
+              >
+                Profile
+              </MenuItem>
               <MenuDivider />
-              <MenuItem onClick={() => {authService.logout(); navigate('/')}} style={{color: 'black'}}>Sign out</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  authService.logout();
+                  navigate("/");
+                }}
+                style={{ color: "black" }}
+              >
+                Sign out
+              </MenuItem>
             </MenuList>
           </Menu>
-          :
-        <Stack justify={"flex-end"} direction={"row"} spacing={6}>
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-            color={"white"}
-            onClick={() => navigate("/login")}
+        ) : (
+          <Stack justify={"flex-end"} direction={"row"} spacing={6}>
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+              color={"white"}
+              onClick={() => navigate("/login")}
             >
-            Sign In
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"brand.300"}
-            href={"#"}
-            _hover={{
-              bg: "brand.400",
-            }}
-            onClick={() => navigate("/register")}
+              Sign In
+            </Button>
+            <Button
+              as={"a"}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"brand.300"}
+              href={"#"}
+              _hover={{
+                bg: "brand.400",
+              }}
+              onClick={() => navigate("/register")}
             >
-            Sign Up
-          </Button>
-        </Stack>
-        }
+              Sign Up
+            </Button>
+          </Stack>
+        )}
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -172,21 +182,30 @@ const DesktopNav = () => {
   const linkHoverColor = "brand.300";
 
   return (
-    <Stack direction={"row"} spacing={4} align={"center"}>
-      {NAV_ITEMS.map((navItem) => (
-        <>
-          <Link to={navItem.href}>
-            <Box
-              key={navItem.label}
-              p={5}
-              color={linkColor}
-              _hover={{ color: linkHoverColor }}
-            >
-              {navItem.label}
-            </Box>
-          </Link>
-        </>
-      ))}
+    <Stack direction={"row"} spacing={8} align={"center"}>
+      {NAV_ITEMS.map((navItem) =>
+        navItem?.type == "dropdown" ? (
+          <DropdownNavItem
+            key={navItem.label}
+            items={navItem.children}
+            label={navItem.label}
+          />
+        ) : (
+          <>
+            <Link to={navItem.href}>
+              <Box
+                key={navItem.label}
+                py={3}
+                color={linkColor}
+                _hover={{ color: linkHoverColor }}
+                fontSize={14}
+              >
+                {navItem.label}
+              </Box>
+            </Link>
+          </>
+        )
+      )}
     </Stack>
   );
 };
@@ -261,25 +280,99 @@ const MobileNavItem = ({ label, children, href }) => {
   );
 };
 
+
+const DropdownNavItem = ({ label, items }) => {
+  const navigate = useNavigate();
+  return (
+    <Menu>
+      <MenuButton fontSize={14}>{label}</MenuButton>
+      <MenuList>
+        {items?.map((item) => (
+          <MenuItem
+            style={{
+              color: "black",
+            }}
+            key={item.label}
+            fontSize={14}
+            onClick={() => navigate(item.href)}
+          >
+            {item.label}
+          </MenuItem>
+        ))}
+      </MenuList>
+    </Menu>
+  );
+};
+
 const NAV_ITEMS = [
   {
-    label: "Programs",
-    href: "#",
+    label: "Home",
+    href: "/",
   },
   {
-    label: "Services",
-    href: "#",
+    label: "About Us",
+    href: "/about-us",
+  },
+  {
+    label: "Programs",
+    href: "/programs",
+    type: "dropdown",
+    children: [
+      {
+        label: "Program Overview",
+        href: "/program-overview",
+      },
+      {
+        label: "Program Core",
+        href: "/program-core",
+      },
+      {
+        label: "Program Support",
+        href: "/post-program-support",
+      },
+    ],
+  },
+  {
+    label: "Resources",
+    href: "/resources",
+    type: "dropdown",
+    children: [
+      {
+        label: "Startups Academy",
+        href: "/resources",
+      },
+      {
+        label: "Startups Resources Data",
+        href: "/resources-list",
+      },
+      {
+        label: "Investors Resources Data",
+        href: "/resource",
+      },
+    ],
+  },
+  {
+    label: "Blogs",
+    href: "/blogs",
+  },
+  {
+    label: "Partners",
+    href: "/partner",
+  },
+  {
+    label: "Events",
+    href: "/events"
+  },
+  {
+    label: "Careers",
+    href: "/careers",
   },
   {
     label: "Support",
     href: "/support",
   },
   {
-    label: "Blog",
-    href: "#",
-  },
-  {
-    label: "About Us",
-    href: "#",
+    label: "Contact Us",
+    href: "/contact-us",
   },
 ];

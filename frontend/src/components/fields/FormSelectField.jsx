@@ -24,15 +24,16 @@ function FormSelectField({
   const isInvalid = isError && isTouched;
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel fontWeight={600}>{label}</FormLabel>
       <Select
+        border={"1px solid"}
         value={value}
         placeholder={placeholder}
         onChange={onChange}
         {...rest}
       >
         {allOptions.map((xOption) => (
-          <option key={xOption.code} value={xOption.name}>
+          <option key={xOption.code} value={xOption.code}>
             {xOption.name}
           </option>
         ))}

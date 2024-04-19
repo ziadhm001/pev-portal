@@ -24,8 +24,10 @@ function FormTextArea({
   const isInvalid = isError && isTouched;
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel fontWeight={600}>{label}</FormLabel>
+      <FormHelperText color={'gray'}>{!error && helperText}</FormHelperText>
       <Textarea
+        border={"1px solid"}
         type={type}
         value={value}
         onChange={(e) => {
@@ -40,7 +42,6 @@ function FormTextArea({
         isInvalid={isInvalid}
         {...rest}
       />
-      <FormHelperText>{!error && helperText}</FormHelperText>
       <FormErrorMessage>{isInvalid && error}</FormErrorMessage>
     </FormControl>
   );

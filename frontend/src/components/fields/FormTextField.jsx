@@ -17,6 +17,7 @@ function FormTextField({
   touched,
   helperText,
   setValue,
+  labelColor,
   ...rest
 }) {
   const isError = error !== undefined;
@@ -24,7 +25,8 @@ function FormTextField({
   const isInvalid = isError && isTouched;
   return (
     <FormControl id={name} isRequired isInvalid={isInvalid}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel fontWeight={600} color={labelColor}>{label}</FormLabel>
+      <FormHelperText color={'gray'}>{!error && helperText}</FormHelperText>
       <Input
         border={"1px solid"}
         type={type}
@@ -41,7 +43,6 @@ function FormTextField({
         isInvalid={isInvalid}
         {...rest}
       />
-      <FormHelperText>{!error && helperText}</FormHelperText>
       <FormErrorMessage>{isInvalid && error}</FormErrorMessage>
     </FormControl>
   );
